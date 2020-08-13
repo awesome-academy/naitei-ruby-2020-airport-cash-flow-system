@@ -1,0 +1,21 @@
+vi:
+  requests:
+    index:
+      head: Danh sách yêu cầu
+      ID: ID
+      requestor: Người tạo
+      title: Mô tả
+      content: Nội dung
+      created_at: Thời gian tạo
+      amount: Chi phí
+      status: Trạng thái
+      actions: Thao tác
+      detail: Chi tiết
+      edit: Sửa
+  views:
+    pagination:
+      first: « VỀ ĐẦU
+      last: VỀ CUỐI »
+      next: KẾ TIẾP ›
+      previous: ‹ TRANG TRƯỚC
+      truncate: …

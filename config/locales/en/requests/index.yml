@@ -1,0 +1,21 @@
+en:
+  requests:
+    index:
+      head: Request List 
+      ID: ID
+      requestor: Requestor
+      title: Description
+      content: Content
+      created_at: Create At
+      amount: Money amount
+      status: Status
+      actions: Actions
+      detail: Detail
+      edit: Edit
+  views:
+    pagination:
+      first: « FIRST
+      last: LAST »
+      next: NEXT ›
+      previous: ‹ PREVIOUS
+      truncate: …

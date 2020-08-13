@@ -25,3 +25,4 @@ validations:
 pagination:
   income: 5
   default_page: 1
+items_per_pages: 10
