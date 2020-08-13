@@ -30,4 +30,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/database.yml
 node_modules
+/spec/*
+!/spec/spec_helper.rb
+!/spec/rails_helper.rb
+public/packs
+public/packs-test
+.env

@@ -1,0 +1,6 @@
+vi:
+  layouts:
+    side_bar:
+      manage_request: "Quản lý yêu cầu"
+      create_request: "Tạo yêu cầu"
+      my_request: "Lịch sử"
