@@ -2,14 +2,17 @@
 <html>
   <head>
     <title>Cash</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="row" id="body-row">
+      <%= render "layouts/side_bar" %>
+      <div class="col p-4">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

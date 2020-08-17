@@ -1,0 +1,9 @@
+vi:
+  layouts:
+    header:
+      setting: "Cài đặt"
+      profile: "Tài khoản"
+      sign_out: "Đăng xuất"
+      lang: "Ngôn ngữ"
+      vietnamese: "Tiếng Việt"
+      english: "Tiếng Anh"

@@ -1,0 +1,87 @@
+body {
+  top: 0;
+  left: 0;
+  width: 100%
+}
+
+#body-row {
+  margin-top: 75px;
+  margin-left:0;
+  margin-right:0;
+}
+
+#sidebar-container {
+  height: 100%;  
+  background-color: white;
+  padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+  width: 260px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+  height: 50px;
+  color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 45px;
+  padding-left: 30px;
+}
+
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+  background-color: $black-lighter;
+  height: 35px;
+}
+
+.sidebar-separator {
+  background-color: $black-lighter;
+  height: 25px;
+}
+
+.logo-separator {
+  background-color: $black-lighter;    
+  height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+
+.img-profile img{
+  border-radius: 50%;
+}
+
+.profile-name{
+  margin-bottom: 0.5px;
+  font-weight: 500;
+}
+
+.col-lg-8{
+  color: $blue-lighter;
+  font-size: 18px;
+  font-weight: 600;
+}

@@ -1,0 +1,9 @@
+en:
+  layouts:
+    header:
+      setting: "Settings"
+      profile: "Profile"
+      sign_out: "Sign out"
+      lang: "Language"
+      vietnamese: "Vietnamese"
+      english: "English"

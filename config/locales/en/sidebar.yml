@@ -1,0 +1,6 @@
+en:
+  layouts:
+    side_bar:
+      manage_request: "Manage request"
+      create_request: "Create request"
+      my_request: "My requests"

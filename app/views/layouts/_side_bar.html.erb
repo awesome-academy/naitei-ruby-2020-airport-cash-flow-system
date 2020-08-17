@@ -1,0 +1,26 @@
+<div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="d-flex">
+        <div class="img-profile">
+          <%= image_tag Settings.image.link_user, alt: "user", width: Settings.image.user_img_size, height:  Settings.image.user_img_size %>
+        </div>
+        <div class="text-wrapper ml-3">
+          <p class="profile-name">Vu Van Duc B</p>
+          <small>Developer</small>
+        </div>
+      </div>
+    </li>
+    <%= link_to "#submenu1", class: "bg-primary list-group-item list-group-item-action flex-column align-items-start", "aria-expanded" => "false", data: {toggle: "collapse"} do%>
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="fa fa-dashboard fa-fw mr-3"></span>
+        <span class="menu-collapsed"><%= t ".manage_request" %></span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    <% end %>
+    <div id="submenu1" class="collapse sidebar-submenu">
+      <%= link_to t(".create_request"), "#", class: "list-group-item list-group-item-action bg-primary text-white" %>
+      <%= link_to t(".my_request"), "#", class: "list-group-item list-group-item-action bg-primary text-white" %>
+    </div>
+  </ul>
+</div>

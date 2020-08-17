@@ -1,0 +1,54 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <%= link_to image_tag(Settings.logo.link, alt: "CFS logo", width: Settings.logo.img_size, height: Settings.logo.img_size), "#" %>
+  </div>
+  <div class="col-lg-8">
+    <span><%= Settings.logo.txt %></span>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav navbar-nav-right ml-auto">
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link dropdown-toggle", type: "button", id: "dropdownMenuButton", data: {toggle: "dropdown"} do %>
+          <i class="fa fa-bell" aria-hidden="true"></i>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <span class="menu-collapsed">
+              <span class="badge badge-pill badge-primary ml-2"></span>
+          </span>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link dropdown-toggle", type: "button", id: "dropdownMenuButton", data: {toggle: "dropdown"} do %>
+          <i class="fa fa-user fa-fw"></i>
+          <i class="submenu-icon ml-auto"></i>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <%= link_to "#", class: "dropdown-item" do %>
+            <i class="fa fa-user fa-fw"></i>
+            <%= t ".profile" %>
+          <% end %>
+          <%= link_to "#", class: "dropdown-item" do %>
+            <i class="fa fa-cog fa-fw"></i>
+            <%= t ".setting" %>
+          <% end %>
+          <%= link_to "#", class: "dropdown-item" do %>
+            <i class="fa fa-sign-out fa-fw"></i>
+            <%= t ".sign_out" %>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= t ".lang" %>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to t(".english"), { locale: :en }, { class: "dropdown-item" } %>
+            <%= link_to t(".vietnamese"), { locale: :vi }, { class: "dropdown-item" } %>
+          <div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
