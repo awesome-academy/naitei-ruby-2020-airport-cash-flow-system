@@ -1,5 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 
-@import 'abstracts/variables';
+@import 'abstracts/*';
 
 @import 'layouts/header';
+@import 'pages/sign_up';
+@import 'pages/home';
+@import 'pages/log_in';

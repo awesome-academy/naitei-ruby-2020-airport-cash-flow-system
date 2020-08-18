@@ -1,0 +1,6 @@
+vi:
+  static_pages:
+    header:
+      vietnamese: "Tiếng Việt"
+      english: "Tiếng Anh"
+      sign_in: "Đăng nhập"

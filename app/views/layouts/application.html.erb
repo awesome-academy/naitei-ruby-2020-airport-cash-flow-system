@@ -6,13 +6,12 @@
     <%= render "layouts/shim" %>
   </head>
 
-  <body>
-    <%= render "layouts/header" %>
-    <div class="row" id="body-row">
-      <%= render "layouts/side_bar" %>
-      <div class="col p-4">
-        <%= yield %>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
       </div>
-    </div>
+    <% end %>
+    <%= yield %>
   </body>
 </html>

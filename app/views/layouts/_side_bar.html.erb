@@ -1,26 +1,47 @@
-<div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-  <ul class="list-group">
-    <li class="list-group-item">
-      <div class="d-flex">
-        <div class="img-profile">
-          <%= image_tag Settings.image.link_user, alt: "user", width: Settings.image.user_img_size, height:  Settings.image.user_img_size %>
-        </div>
-        <div class="text-wrapper ml-3">
-          <p class="profile-name">Vu Van Duc B</p>
-          <small>Developer</small>
-        </div>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <%= link_to "#", class: "brand-link" do %>
+    <%= image_tag Settings.logo.link, alt: "CFS logo", width: Settings.logo.img_size, height: Settings.logo.img_size, class: "brand-image img-circle elevation-3" %>
+    <span class="brand-text font-weight-light"><%= Settings.logo.logo_txt %></span>
+  <% end %>
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <%= image_tag Settings.image.link_user, alt: "user image", class: "img-circle elevation-2" %>
       </div>
-    </li>
-    <%= link_to "#submenu1", class: "bg-primary list-group-item list-group-item-action flex-column align-items-start", "aria-expanded" => "false", data: {toggle: "collapse"} do%>
-      <div class="d-flex w-100 justify-content-start align-items-center">
-        <span class="fa fa-dashboard fa-fw mr-3"></span>
-        <span class="menu-collapsed"><%= t ".manage_request" %></span>
-        <span class="submenu-icon ml-auto"></span>
+      <div class="info">
+        <%= link_to "#", class: "d-block" do %>
+          Duc Vu
+        <% end %>
       </div>
-    <% end %>
-    <div id="submenu1" class="collapse sidebar-submenu">
-      <%= link_to t(".create_request"), "#", class: "list-group-item list-group-item-action bg-primary text-white" %>
-      <%= link_to t(".my_request"), "#", class: "list-group-item list-group-item-action bg-primary text-white" %>
     </div>
-  </ul>
-</div>
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview menu-open">
+          <%= link_to "#", class: "nav-link active" %>
+            <i class="far fa-hourglass nav-icon"></i>
+            <p>
+              <%= t ".manage_request" %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          <% end %>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link active" do %>
+                <i class="fas fa-plus-circle nav-icon"></i>
+                <p><%= t ".create_request" %></p>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fas fa-history nav-icon"></i>
+                <p><%= t ".my_request" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
