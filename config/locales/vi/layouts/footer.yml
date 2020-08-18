@@ -1,0 +1,7 @@
+vi:
+  layouts:
+    footer:
+      about: "Về chúng tôi"
+      contact: "Liên hệ"
+      term_of_user: "Điều khoản người dùng"
+      policy: "Quyền riêng tư"

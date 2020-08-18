@@ -1,0 +1,9 @@
+vi:
+  sessions:
+    new:
+      title_page: "Đăng nhập"
+      email_label: "Email"
+      password_label: "Mật khẩu"
+      checkbox_msg: "Duy trì đăng nhập"
+      btn_label: "Đăng nhập"
+      btn_login_aws: "Đăng nhập với AWS"

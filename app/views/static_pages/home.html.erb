@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <%= render "layouts/header" %>
+  <%= render "layouts/side_bar" %>
+  <div class="content-wrapper">
+
+  </div>
+<% else %>
+  <%= render "static_pages/landing_page" %>
+  <%= render "layouts/footer" %>
+<% end %>

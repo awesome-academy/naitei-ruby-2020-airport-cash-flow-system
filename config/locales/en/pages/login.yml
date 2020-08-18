@@ -1,0 +1,9 @@
+en:
+  sessions:
+    new:
+      title_page: "Sign in"
+      email_label: "Email"
+      password_label: "Password"
+      checkbox_msg: "Remember me"
+      btn_label: "Sign in"
+      btn_login_aws: "Sign in with AWS"

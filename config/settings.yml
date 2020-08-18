@@ -1,9 +1,24 @@
 link:
   home: "#"
 logo:
-  img_size: 60
+  img_size: 27
+  img_size_home: 50
   txt: Cash flow system
-  link: "cfs-logo.png"
+  link: "logo.png"
+  logo_txt: "Cash flow system"
 image:
   link_user: "https://wsm.sun-asterisk.vn//assets/user_avatar_default-bc6c6c40940226d6cf0c35571663cd8d231a387d5ab1921239c2bd19653987b2.png"
+  link_logo_wsm: "wsm-logo.ico"
+  link_logo_wsm_size: 20
   user_img_size: 40
+landing_page:
+  text: " Tokyo International Airport"
+validations:
+  user:
+    email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+    name_max_length: 50
+    email_max_length: 255
+    pass_min_length: 6
+    user_per_page: 20
+    size_ava: 50
+    checkbox_checked: "1"
