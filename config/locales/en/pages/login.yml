@@ -7,3 +7,5 @@ en:
       checkbox_msg: "Remember me"
       btn_label: "Sign in"
       btn_login_aws: "Sign in with AWS"
+    create:
+      flash_msg: "Sign in unsucessfully"

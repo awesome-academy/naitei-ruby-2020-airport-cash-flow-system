@@ -1,4 +1,4 @@
-class Section < ApplicationRecord
+class Role < ApplicationRecord
   has_many :users, dependent: :destroy
 
   def name_initial

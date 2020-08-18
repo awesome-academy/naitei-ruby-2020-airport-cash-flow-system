@@ -16,7 +16,7 @@
             </div>
             <%= f.submit t(".btn_label"), class: "btn btn-lg btn-primary btn-block text-uppercase" %>
             <hr class="my-4">
-            <%= button_tag( :class => "btn btn-lg btn-facebook btn-block text-uppercase") do %>
+            <%= button_tag( :class => "btn btn-lg btn-block text-uppercase", :id => "btn-facebook") do %>
               <%= t ".btn_login_aws" %>  <%= image_tag Settings.image.link_logo_wsm, alt: "wsm-logo", width: Settings.image.link_logo_wsm_size, height: Settings.image.link_logo_wsm_size %>
             <% end %>
           <% end %>
