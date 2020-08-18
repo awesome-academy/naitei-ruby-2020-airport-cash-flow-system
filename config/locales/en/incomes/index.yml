@@ -2,20 +2,21 @@ en:
   app:
     dates:
       format: "%H:%M %Y/%m/%d"
-  incomes:
-    index:
-      title: "Income Table"
-      heading: "Income Table"
-      no: "No."
-      supplier: "Supplier"
-      table_title: "Title"
-      content: "Content"
-      amount: "Amount"
-      created_at: "Created At"
-      created_by: "Created By"
-      actions: "Actions"
-      details: "Details"
-      edit: "Edit"
+  accountant:  
+    incomes:
+      index:
+        title: "Income Table"
+        heading: "Income Table"
+        no: "No."
+        supplier: "Supplier"
+        table_title: "Title"
+        content: "Content"
+        amount: "Amount"
+        created_at: "Created At"
+        created_by: "Created By"
+        actions: "Actions"
+        details: "Details"
+        edit: "Edit"
   views:
     pagination:
       first: « FIRST

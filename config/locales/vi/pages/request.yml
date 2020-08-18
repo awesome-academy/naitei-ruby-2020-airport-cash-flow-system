@@ -1,0 +1,21 @@
+vi:
+  shared:
+    error_messages:
+      error: "lỗi"
+  requests:
+    new:
+      form_title: "Yêu cầu mới"
+      details_title: "Chi tiết"
+      name_label: "Tiêu đề"
+      content_label: "Nội dung"
+      currency_label: "Đơn vị tiền tệ"
+      btn_add: "Thêm hàng"
+      btn_create: "Tạo"
+    create:
+      request_created: "Tạo yêu cầu công"
+      request_failed: "Tạo yêu cầu thất bại"
+    request_detail_fields:  
+      section_label: "Phòng ban"
+      description_label: "Miêu tả"
+      amount_label: "Số tiền"
+      action_label: "Xóa"

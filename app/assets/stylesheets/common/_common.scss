@@ -1,0 +1,15 @@
+.my-require {
+  position: relative;
+
+  &::after {
+    color: red;
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    content: '*'
+  }
+}
+
+.field_with_errors{
+  width: 100%;
+}

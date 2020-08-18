@@ -1,0 +1,12 @@
+en:
+  admin:
+    users:
+      new:
+        name_label: "Name"
+        email_label: "Email"
+        role_label: "Role"
+        section_label: "Section"
+        password_label: "Password"
+        confirmation_label: "Confirmation password"
+        sign_up: "Create account"
+        title_page: "Create new account"

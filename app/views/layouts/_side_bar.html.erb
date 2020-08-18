@@ -10,14 +10,14 @@
       </div>
       <div class="info">
         <%= link_to "#", class: "d-block" do %>
-          Duc Vu
+          <%= current_user.name %>
         <% end %>
       </div>
     </div>
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item has-treeview menu-open">
-          <%= link_to "#", class: "nav-link active" do %>
+          <%= link_to "#", class: "nav-link" do %>
             <i class="far fa-hourglass nav-icon"></i>
             <p>
               <%= t ".manage_request" %>
@@ -26,7 +26,7 @@
           <% end %>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <%= link_to "#", class: "nav-link active" do %>
+              <%= link_to new_request_path, class: "nav-link" do %>
                 <i class="fas fa-plus-circle nav-icon"></i>
                 <p><%= t ".create_request" %></p>
               <% end %>
@@ -43,34 +43,36 @@
         </li>
       </ul>
     </nav>
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item has-treeview menu-open">
-          <%= link_to "#", class: "nav-link active" do %>
-            <i class="fas fa-money-check-alt nav-icon"></i>
-            <p>
-              <%= t ".manage_income" %>
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          <% end %>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to "#", class: "nav-link active" do %>
-                <i class="fas fa-plus-circle nav-icon"></i>
-                <p><%= t ".create_income" %></p>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "incomes", class: "nav-link" do %>
-                <i class="fas fa-history nav-icon"></i>
-                <p><%= t ".my_income" %></p>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-        </li>
-      </ul>
-    </nav>
+    <% if current_user.is_accountant? %>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item has-treeview menu-open">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fas fa-money-check-alt nav-icon"></i>
+              <p>
+                <%= t ".manage_income" %>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            <% end %>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <%= link_to "#", class: "nav-link" do %>
+                  <i class="fas fa-plus-circle nav-icon"></i>
+                  <p><%= t ".create_income" %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to accountant_incomes_path, class: "nav-link" do %>
+                  <i class="fas fa-history nav-icon"></i>
+                  <p><%= t ".my_income" %></p>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </nav>
+    <% end %>
   </div>
 </aside>

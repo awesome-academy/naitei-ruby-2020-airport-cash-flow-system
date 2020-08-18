@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < Admin::ApplicationController
   def index; end
 
   def new
@@ -15,8 +15,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def show; end
 
   private
 

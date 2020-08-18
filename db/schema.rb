@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_143542) do
+ActiveRecord::Schema.define(version: 2020_08_19_142452) do
+
+  create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.timestamp "paid_time"
@@ -45,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_143542) do
 
   create_table "request_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "amount"
-    t.string "currency"
+    t.string "description"
     t.string "section_name"
     t.bigint "request_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_143542) do
 
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
+    t.string "currency"
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "status_id", null: false
