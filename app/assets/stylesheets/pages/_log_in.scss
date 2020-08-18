@@ -99,7 +99,7 @@ body {
   color: $gray-200;
 }
 
-.btn-facebook {
+#btn-facebook {
   color: white;
   background-color: $btn-fb;
 }
@@ -126,4 +126,10 @@ body {
   .form-label-group input:-ms-input-placeholder {
     color: $gray-200;
   }
+}
+
+.txt-label {
+  font-size: larger;
+  font-weight: 400;
+  font-family: fantasy;
 }

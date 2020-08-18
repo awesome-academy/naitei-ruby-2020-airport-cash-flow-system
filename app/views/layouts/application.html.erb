@@ -7,11 +7,15 @@
   </head>
 
   <body class="hold-transition sidebar-mini layout-fixed">
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>">
-        <%= message %>
+    <%= render "shared/flash_toaster" %>
+    <% if logged_in? %>
+      <%= render "layouts/header" %>
+      <%= render "layouts/side_bar" %>
+      <div class="content-wrapper">
+        <%= yield %>
       </div>
+    <% else %>
+      <%= yield %>
     <% end %>
-    <%= yield %>
   </body>
 </html>
