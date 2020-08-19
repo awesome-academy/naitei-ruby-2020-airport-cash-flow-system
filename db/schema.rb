@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_141415) do
+ActiveRecord::Schema.define(version: 2020_08_17_143542) do
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.timestamp "paid_time"
@@ -65,6 +65,12 @@ ActiveRecord::Schema.define(version: 2020_08_15_141415) do
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -91,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_141415) do
     t.bigint "section_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email"
     t.index ["section_id"], name: "index_users_on_section_id"
   end
