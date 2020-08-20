@@ -1,6 +1,11 @@
 class RequestsController < ApplicationController
   before_action :logged_in?, only: %i(create new)
 
+  def index
+    @requests = Request.by_status_and_datetime.page(params[:page]).per Settings.pagination.items_per_pages
+    @page = params[:page].nil? ? Settings.pagination.default_page : params[:page].to_i
+  end
+
   def new
     @request = Request.new
     @request.request_details.new
