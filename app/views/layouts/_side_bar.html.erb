@@ -43,5 +43,34 @@
         </li>
       </ul>
     </nav>
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview menu-open">
+          <%= link_to "#", class: "nav-link active" do %>
+            <i class="fas fa-money-check-alt nav-icon"></i>
+            <p>
+              <%= t ".manage_income" %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          <% end %>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link active" do %>
+                <i class="fas fa-plus-circle nav-icon"></i>
+                <p><%= t ".create_income" %></p>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "incomes", class: "nav-link" do %>
+                <i class="fas fa-history nav-icon"></i>
+                <p><%= t ".my_income" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+    </nav>
   </div>
 </aside>
