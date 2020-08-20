@@ -1,0 +1,54 @@
+<% provide :title, t(".title") %>
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title"><%= t ".heading" %></h3>
+    <div class="card-tools">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="text-nowrap">
+        <tr>
+          <th><%= t ".no" %></th>
+          <th><%= t ".supplier" %></th>
+          <th><%= t ".table_title" %></th>
+          <th><%= t ".content" %></th>
+          <th><%= t ".amount" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".created_by" %></th>
+          <th><%= t ".actions" %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @incomes.each_with_index do |income, index| %>
+        <tr>
+          <td><%= index + 1 + (@page-1)*Settings.pagination.income %></td>
+          <td><%= income.supplier.name %></td>
+          <td><%= income.title %></td>
+          <td><%= income.content %></td>
+          <td><%= number_to_currency(income.amount) %></td>
+          <td><%= I18n.localize income.created_at, format: t("app.dates.format") %></td>
+          <td><%= income.user.name %></td>
+          <td class="text-nowrap">
+            <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title=<%= t ".details" %> ><i class="fa fa-eye"></i></button>
+            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title=<%= t ".edit" %> ><i class="fa fa-edit"></i></button>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+      <%= paginate @incomes, theme: "twitter-bootstrap-4" %>
+    </ul>
+  </div>
+</div>

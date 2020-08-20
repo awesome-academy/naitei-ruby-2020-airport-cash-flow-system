@@ -7,5 +7,7 @@ vi:
       checkbox_msg: "Duy trì đăng nhập"
       btn_label: "Đăng nhập"
       btn_login_aws: "Đăng nhập với AWS"
+      sign_in: "Đăng nhập"
     create:
-      flash_msg: "Đăng nhập không thành công"
+      failed_msg: "Đăng nhập không thành công"
+      success_msg: "Đăng nhập thành công"

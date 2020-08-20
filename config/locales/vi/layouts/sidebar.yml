@@ -4,3 +4,6 @@ vi:
       manage_request: "Quản lý yêu cầu"
       create_request: "Tạo yêu cầu"
       my_request: "Lịch sử"
+      manage_income: "Quản lý khoản thu"
+      create_income: "Nhập khoản thu mới"
+      my_income: "Các khoản thu đã nhập"

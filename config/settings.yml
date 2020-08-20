@@ -22,3 +22,6 @@ validations:
     user_per_page: 20
     size_ava: 50
     checkbox_checked: "1"
+pagination:
+  income: 5
+  default_page: 1

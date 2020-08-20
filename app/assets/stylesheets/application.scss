@@ -11,5 +11,7 @@
 * It is generally better to create a new file per style scope.
 * 
 *= require_self
+*= require toastr
 */
 @import 'main';
+@import 'toastr/build/toastr.min';

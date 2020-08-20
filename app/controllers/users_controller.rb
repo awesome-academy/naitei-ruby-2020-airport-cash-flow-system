@@ -9,18 +9,11 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      flash.now[:info] = "Account created"
+      flash.now[:info] = t ".acc_create_success"
       redirect_to root_url
     else
       render :new
     end
-  end
-
-  def authenticated? attribute, token
-    digest = send "#{attribute}_digest"
-    return false unless digest
-
-    BCrypt::Password.new(digest).is_password? token
   end
 
   def show; end

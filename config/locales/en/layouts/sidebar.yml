@@ -4,3 +4,6 @@ en:
       manage_request: "Manage request"
       create_request: "Create request"
       my_request: "My requests"
+      manage_income: "Manage income"
+      create_income: "Create income"
+      my_income: "Added incomes"

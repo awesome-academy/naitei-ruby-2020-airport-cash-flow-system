@@ -3,3 +3,31 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+#toast-container {
+  .toast {
+    border: none;
+    transition: $transition-base;
+    border-radius: $border-radius;
+
+    &:hover {
+      box-shadow: $box-shadow;
+    }
+  }
+
+  & .toast-error {
+    background-color: $danger;
+  }
+
+  & .toast-success {
+    background-color: $success;
+  }
+
+  & .toast-info {
+    background-color: $info;
+  }
+
+  & .toast-warning {
+    background-color: $warning;
+  }
+}

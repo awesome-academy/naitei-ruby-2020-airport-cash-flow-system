@@ -21,10 +21,10 @@ class SessionsController < ApplicationController
     if user&.authenticate params[:session][:password]
       log_in user
       remember_me user
-      flash.now[:info] = "Login success"
+      flash[:success] = t ".success_msg"
       redirect_to root_url
     else
-      flash.now[:danger] = t ".flash_msg"
+      flash[:error] = t ".failed_msg"
       render :new
     end
   end

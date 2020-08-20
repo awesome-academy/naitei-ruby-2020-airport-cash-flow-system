@@ -60,6 +60,9 @@ GEM
     bcrypt (3.1.13)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
+    bootstrap4-kaminari-views (1.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.4)
     code_analyzer (0.5.2)
       sexp_processor
@@ -128,6 +131,18 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     json (2.3.1)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -151,6 +166,8 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
+    polyamorous (2.3.2)
+      activerecord (>= 5.2.1)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -202,6 +219,11 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rainbow (3.0.0)
     rake (13.0.1)
+    ransack (2.3.2)
+      activerecord (>= 5.2.1)
+      activesupport (>= 5.2.1)
+      i18n
+      polyamorous (= 2.3.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -265,6 +287,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -286,10 +310,12 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.13)
   bootsnap (>= 1.4.2)
+  bootstrap4-kaminari-views
   config
   dotenv-rails
   factory_bot_rails
   faker (= 2.1.2)
+  kaminari
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
   pry-rails
@@ -297,12 +323,14 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-i18n
   rails_best_practices
+  ransack
   rspec-rails
   rubocop
   rubocop-rails (~> 2.3.2)
   sass-rails (>= 6)
   spring
   spring-watcher-listen (~> 2.0.0)
+  toastr-rails
   turbolinks (~> 5)
   tzinfo-data
   webpacker (~> 4.0)

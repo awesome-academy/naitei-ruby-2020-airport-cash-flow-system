@@ -1,10 +1,6 @@
-<nav class="navbar navbar-light bg-light static-top">
+<nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag Settings.logo.link, alt: "CFS logo", width: Settings.logo.img_size_home, height: Settings.logo.img_size_home %>
-    <% end %>
     <div class="ml-auto d-flex">
-      <%= link_to t(".sign_in"), login_path, class: "btn btn-sm btn-secondary mr-2" %>
       <div class="dropdown ml-3">
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-globe"></i>
