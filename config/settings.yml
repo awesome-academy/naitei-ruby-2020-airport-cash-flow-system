@@ -27,7 +27,7 @@ validations:
     manager_role: 3
     user_role: 4
 pagination:
-  income: 5
+  items_per_pages: 15
   default_page: 1
 status:
   pending: 1

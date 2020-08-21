@@ -1,0 +1,30 @@
+en:
+  app:
+    dates:
+      format: "%H:%M %Y/%m/%d"
+  requests:
+    index:
+      head: Request List 
+      id: ID
+      requestor: Requestor
+      title: Description
+      content: Content
+      created_at: Create At
+      amount: Money amount
+      status: Status
+      actions: Actions
+      detail: Detail
+      edit: Edit
+      pending: pending
+      approved: approved
+      rejected: rejected
+      canceled: canceled
+      paid: paid
+      new_request: New Request
+  views:
+    pagination:
+      first: « FIRST
+      last: LAST »
+      next: NEXT ›
+      previous: ‹ PREVIOUS
+      truncate: …
