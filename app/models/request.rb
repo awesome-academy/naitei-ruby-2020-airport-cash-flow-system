@@ -18,8 +18,19 @@ class Request < ApplicationRecord
                      [:amount, :description, :section_name, :_destroy]].freeze
 
   validates :title, :content, :status_id, :currency, :request_details, presence: true
+  validates :reason, presence: true, if: :is_rejected?
   validates_associated :request_details
 
   scope :by_status_and_datetime, ->{order(status_id: :asc, created_at: :desc)}
   scope :own_request, ->(user_id){where(user_id: user_id)}
+  scope :find_requests_by_section, ->(section_id){where user_id: User.users_section(section_id)}
+  scope :except_own_request, ->(user_id){where.not user_id: user_id}
+
+  def is_rejected?
+    status_id == Settings.status.rejected
+  end
+
+  def is_pending?
+    status_id == Settings.status.pending
+  end
 end

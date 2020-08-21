@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_022747) do
     t.string "title"
     t.string "currency"
     t.text "content"
+    t.text "reason"
     t.bigint "user_id", null: false
     t.bigint "status_id", null: false
     t.datetime "created_at", precision: 6, null: false
