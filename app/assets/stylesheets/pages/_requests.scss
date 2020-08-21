@@ -18,3 +18,26 @@
 .header {
   margin-bottom: 20px;
 }
+
+.request-row {
+  border-bottom: $table-border 1px solid;
+  margin: 0 18px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.request-row:hover {
+  background-color: $table-border;
+}
+
+#card-body-request {
+  padding: 2.4rem 4rem;
+}
+
+#card-header-request {
+  padding: 2rem 1.8rem;
+}
+
+#card-title-request {
+  font-size: 27px;
+}

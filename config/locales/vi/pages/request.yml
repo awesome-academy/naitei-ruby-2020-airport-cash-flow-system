@@ -1,9 +1,32 @@
 vi:
+  app:
+    dates:
+      format: "%H:%M %d/%m/%Y"
   shared:
     error_messages:
       error: "lỗi"
   requests:
+    index:
+      failed_login: "Cần đăng nhập để thực hiện hành động này"
+      head: Danh sách yêu cầu
+      id: ID
+      requestor: Người tạo
+      title: Mô tả
+      content: Nội dung
+      created_at: Thời gian tạo
+      amount: Chi phí
+      status: Trạng thái
+      actions: Thao tác
+      detail: Chi tiết
+      edit: Sửa
+      pending: đang chờ
+      approved: chấp nhận
+      rejected: từ chối
+      canceled: hủy bỏ
+      paid: đã chi
+      new_request: Tạo yêu cầu
     new:
+      failed_login: "Cần đăng nhập để thực hiện hành động này"
       form_title: "Yêu cầu mới"
       details_title: "Chi tiết"
       name_label: "Tiêu đề"
@@ -12,6 +35,7 @@ vi:
       btn_add: "Thêm hàng"
       btn_create: "Tạo"
     create:
+      failed_login: "Cần đăng nhập để thực hiện hành động này"
       request_created: "Tạo yêu cầu công"
       request_failed: "Tạo yêu cầu thất bại"
     request_detail_fields:  
@@ -19,3 +43,31 @@ vi:
       description_label: "Miêu tả"
       amount_label: "Số tiền"
       action_label: "Xóa"
+    show:
+      failed_login: "Cần đăng nhập để thực hiện hành động này"
+      request_detail: "Chi tiết yêu cầu"
+      requestor: "Người yêu cầu:"
+      title: "Tiêu đề:"
+      content: "Nội dung:"
+      status: "Trạng thái:"
+      sum: "Tổng tiền:"
+      currency: "ĐV tiền tệ:"
+      details: "Chi tiết"
+      section: "Bộ phận"
+      des: "Miêu tả"
+      amount: "Số tiền"
+      go_back: "Quay lại"
+      cancel: "Hủy yêu cầu"
+      edit: "Chỉnh sửa yêu cầu"
+      pending: "đang chờ"
+      approved: "chấp nhận"
+      rejected: "từ chối"
+      paid: "đã chi"
+      canceled: "huỷ bỏ"
+  views:
+    pagination:
+      first: « VỀ ĐẦU
+      last: VỀ CUỐI »
+      next: KẾ TIẾP ›
+      previous: ‹ TRANG TRƯỚC
+      truncate: …

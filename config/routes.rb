@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
 
-    get "/login", to: "sessions#new"
+    get "/login", to: "sessions#new", as: "login"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
       resources :users, only: %i(new create)
     end
 
-    resources :requests, only: %i(new create index)
+    resources :requests, except: %i(destroy update edit)
   end
 end

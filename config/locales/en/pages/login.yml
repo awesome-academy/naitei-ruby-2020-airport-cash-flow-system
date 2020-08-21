@@ -8,6 +8,7 @@ en:
       btn_label: "Sign in"
       btn_login_aws: "Sign in with AWS"
       sign_in: "Sign in"
+      already_sign_in: "You are already sign in"
     create:
       failed_msg: "Sign in unsuccessfully"
       success_msg: "Sign in successfully"

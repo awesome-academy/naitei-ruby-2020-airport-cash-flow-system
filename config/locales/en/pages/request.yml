@@ -1,9 +1,32 @@
 en:
+  app:
+    dates:
+      format: "%H:%M %Y/%m/%d"
   shared:
     error_messages:
       error: "error"
   requests:
+    index:
+      failed_login: "You must be logged in to access this section"
+      head: Request List 
+      id: ID
+      requestor: Requestor
+      title: Description
+      content: Content
+      created_at: Create At
+      amount: Money amount
+      status: Status
+      actions: Actions
+      detail: Detail
+      edit: Edit
+      pending: pending
+      approved: approved
+      rejected: rejected
+      canceled: canceled
+      paid: paid
+      new_request: New Request
     new:
+      failed_login: "You must be logged in to access this section"
       form_title: "Request form"
       details_title: "Details"
       name_label: "Title"
@@ -12,6 +35,7 @@ en:
       btn_add: "Add Row"
       btn_create: "Create"
     create:
+      failed_login: "You must be logged in to access this section"
       request_created: "Requested success"
       request_failed: "Requested failed"
     request_detail_fields:
@@ -19,3 +43,31 @@ en:
       description_label: "Description"
       amount_label: "Amount"
       action_label: "Action"
+    show:
+      failed_login: "You must be logged in to access this section"
+      request_detail: "Advance Request"
+      requestor: "Requestor:"
+      title: "Title:"
+      content: "Content:"
+      status: "Status:"
+      sum: "Total money:"
+      currency: "Currency:"
+      details: "Details"
+      section: "Section"
+      des: "Description"
+      amount: "Money amount"
+      go_back: "Go back"
+      cancel: "Cancel Request"
+      edit: "Edit Request"
+      pending: "pending"
+      approved: "approved"
+      rejected: "rejected"
+      paid: "paid"
+      canceled: "canceled"
+  views:
+    pagination:
+      first: « FIRST
+      last: LAST »
+      next: NEXT ›
+      previous: ‹ PREV
+      truncate: …

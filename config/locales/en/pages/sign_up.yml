@@ -2,6 +2,7 @@ en:
   admin:
     users:
       new:
+        failed_login: "You must be logged in to access this section"
         name_label: "Name"
         email_label: "Email"
         role_label: "Role"
