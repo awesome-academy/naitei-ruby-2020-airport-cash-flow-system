@@ -7,13 +7,13 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
 
     namespace :accountant do
-      resources :incomes, only: :index
+      resources :incomes, only: %i(index new create)
     end
 
     namespace :admin do
       resources :users, only: %i(new create)
     end
 
-    resources :requests, only: %i(new create)
+    resources :requests, only: %i(new create index)
   end
 end

@@ -1,0 +1,51 @@
+vi:
+  app:
+    dates:
+      format: "%H:%M %d/%m/%Y"
+  accountant:
+    incomes:
+      form:
+        title: "Tiêu Đề"
+        supplier: "Nhà Cung Cấp"
+        amount: "Số Tiền"
+        currency: "Đơn vị tiền tệ"
+        content: "Nội Dung"
+      index:
+        title: "Các Khoản Thu"
+        heading: "Các Khoản Thu"
+        num: "STT"
+        supplier: "Nhà Cung Cấp"
+        table_title: "Tiêu Đề"
+        content: "Nội Dung"
+        amount: "Số Tiền"
+        created_at: "Thời Gian Nhập"
+        status: "Trạng Thái"
+        created_by: "Người Nhập"
+        actions: "Thao Tác"
+        details: "Xem"
+        edit: "Sửa"
+        new_income: "Nhập Khoản Thu"
+        pending: "đang chờ"
+        approved: "chấp nhận"
+        rejected: "từ chối"
+        canceled: "hủy bỏ"
+        paid: "đã chi"
+      new:
+        title: "Nhập Khoản Thu"
+        heading: "Nhập Khoản Thu"
+        button: "Tạo"
+        form_title: "Tiêu Đề"
+      edit:
+        title: "Cập Nhập Khoản Thu"
+        heading: "Cập Nhập Khoản Thu"
+        button: "Cập Nhập"
+      create:
+        success_mess: "Đã Thêm"
+        fail_mess_create: "Thêm không thành công, hãy thử lại"
+  views:
+    pagination:
+      first: « VỀ ĐẦU
+      last: VỀ CUỐI »
+      next: KẾ TIẾP ›
+      previous: ‹ TRANG TRƯỚC
+      truncate: …

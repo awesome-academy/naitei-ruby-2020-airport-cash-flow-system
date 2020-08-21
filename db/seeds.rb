@@ -103,6 +103,7 @@ requests = Request.order(:created_at).take(20)
 end
 
 # Generate a bunch of additional suppliers.
+# TYPE: true =>personal, false =>company
 10.times do |n|
   name = Faker::Name.name
   Supplier.create!(name: name)
@@ -116,12 +117,14 @@ users = User.order(:created_at).take(5)
   amount = 100000
   currency = "USD"
   supplier_id = 1
+  status_id = 1
   users.each { |user| user.incomes.create!(
     title: title,
     content: content,
     amount: amount,
     currency: currency,
-    supplier_id: supplier_id
+    supplier_id: supplier_id,
+    status_id: status_id
     )
   }
 end

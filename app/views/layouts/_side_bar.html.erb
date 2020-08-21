@@ -32,7 +32,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "#", class: "nav-link" do %>
+              <%= link_to requests_path, class: "nav-link" do %>
                 <i class="fas fa-history nav-icon"></i>
                 <p><%= t ".my_request" %></p>
               <% end %>
@@ -56,7 +56,7 @@
             <% end %>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <%= link_to "#", class: "nav-link" do %>
+                <%= link_to new_accountant_income_path, class: "nav-link" do %>
                   <i class="fas fa-plus-circle nav-icon"></i>
                   <p><%= t ".create_income" %></p>
                 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_142452) do
+ActiveRecord::Schema.define(version: 2020_08_20_022747) do
 
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_142452) do
     t.bigint "supplier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "status_id", null: false
+    t.index ["status_id"], name: "index_incomes_on_status_id"
     t.index ["supplier_id"], name: "index_incomes_on_supplier_id"
     t.index ["user_id", "created_at"], name: "index_incomes_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_incomes_on_user_id"
@@ -94,6 +96,9 @@ ActiveRecord::Schema.define(version: 2020_08_19_142452) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "taxNum"
+    t.string "address"
+    t.boolean "type"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -110,6 +115,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_142452) do
   end
 
   add_foreign_key "histories", "requests"
+  add_foreign_key "incomes", "statuses"
   add_foreign_key "incomes", "suppliers"
   add_foreign_key "incomes", "users"
   add_foreign_key "notifications", "requests"

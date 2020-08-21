@@ -1,0 +1,10 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".button") %>
+<div class="card">
+  <div>
+    <h2 class="card-title-custom text-center w-100">
+      <%= t ".heading" %>
+    </h2>
+  </div>
+  <%= render "form", {income: @income, suppliers: @suppliers, currencies: @currencies} %>
+</div>

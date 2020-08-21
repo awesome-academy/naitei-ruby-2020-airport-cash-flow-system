@@ -5,5 +5,5 @@ en:
       create_request: "Create request"
       my_request: "My requests"
       manage_income: "Manage income"
-      create_income: "Create income"
-      my_income: "Added incomes"
+      create_income: "New income"
+      my_income: "Incomes List"
