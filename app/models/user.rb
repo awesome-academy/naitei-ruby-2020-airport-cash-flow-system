@@ -32,6 +32,18 @@ class User < ApplicationRecord
     update remember_digest: nil
   end
 
+  def is_accountant?
+    role_id == Settings.validations.user.accountant_role
+  end
+
+  def is_admin?
+    role_id == Settings.validations.user.admin_role
+  end
+
+  def is_manager?
+    role_id == Settings.validations.user.manager_role
+  end
+
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
     return false unless digest

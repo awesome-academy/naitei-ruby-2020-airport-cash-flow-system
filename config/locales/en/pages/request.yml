@@ -1,0 +1,21 @@
+en:
+  shared:
+    error_messages:
+      error: "error"
+  requests:
+    new:
+      form_title: "Request form"
+      details_title: "Details"
+      name_label: "Title"
+      content_label: "Content"
+      currency_label: "Currency"
+      btn_add: "Add Row"
+      btn_create: "Create"
+    create:
+      request_created: "Requested success"
+      request_failed: "Requested failed"
+    request_detail_fields:
+      section_label: "Section"
+      description_label: "Description"
+      amount_label: "Amount"
+      action_label: "Action"

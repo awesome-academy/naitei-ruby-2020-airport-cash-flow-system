@@ -23,7 +23,7 @@ User.create!(
 
 # Generate 2 managers
 2.times do |n|
-  name = Faker::Name.name
+  name = "Manager#{n+1}"
   email = "manager#{n+1}@gmail.com"
   password = "password"
   role_id = 3
@@ -40,7 +40,7 @@ end
 
 # Generate 3 accountant
 3.times do |n|
-  name = Faker::Name.name
+  name = "Accountant#{n+1}"
   email = "accountant#{n+1}@gmail.com"
   password = "password"
   role_id = 2
@@ -73,28 +73,33 @@ end
 end
 
 # Create status
-Status.create! name: "pending"
-Status.create! name: "approved"
-Status.create! name: "paid"
-Status.create! name: "rejected"
-Status.create! name: "canceled"
+Status.create! name: "pending" #1
+Status.create! name: "approved" #2
+Status.create! name: "paid" #3
+Status.create! name: "rejected" #4
+Status.create! name: "canceled" #5
 
 # Generate requests for a subset of users.
 users = User.order(:created_at).take(10)
 2.times do
   title = Faker::Lorem.sentence(word_count: 2)
-  content = Faker::Lorem.sentence(word_count: 5)
+  content = Faker::Lorem.sentence(word_count: 20)
+  currency = Faker::Currency.code
   status_id = 1
-  users.each { |user| user.requests.create!(title: title, content: content, status_id: status_id) }
+  users.each { |user| user.requests.create!(
+      title: title,
+      content: content,
+      currency: currency,
+      status_id: status_id
+    )}
 end
 
-# Generate requests details for a subset of requests.
 requests = Request.order(:created_at).take(20)
 2.times do
   amount = Faker::Number.number(digits: 10)
-  currency = Faker::Currency.code
+  description = Faker::Lorem.sentence(word_count: 10)
   section_name = Faker::Address.country
-  requests.each { |request| request.request_details.create!(amount: amount, currency: currency, section_name: section_name) }
+  requests.each { |request| request.request_details.create!(amount: amount, description: description, section_name: section_name) }
 end
 
 # Generate a bunch of additional suppliers.
@@ -120,3 +125,8 @@ users = User.order(:created_at).take(5)
     )
   }
 end
+
+#generate currencies VND, USD, JPY
+Currency.create! name: "VND"
+Currency.create! name: "USD"
+Currency.create! name: "JPY"

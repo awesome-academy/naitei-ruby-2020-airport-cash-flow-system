@@ -1,0 +1,12 @@
+vi:
+  admin:
+    users:
+      new:
+        name_label: "Tên"
+        email_label: "Email"
+        role_label: "Vai trò"
+        section_label: "Bộ phận"
+        password_label: "Mật khẩu"
+        confirmation_label: "Xác nhận mật khẩu"
+        sign_up: "Tạo tài khoản"
+        title_page: "Tài khoản mới"

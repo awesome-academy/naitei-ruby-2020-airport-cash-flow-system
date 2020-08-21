@@ -2,20 +2,21 @@ vi:
   app:
     dates:
       format: "%H:%M %d/%m/%Y"
-  incomes:
-    index:
-      title: "Các Khoản Thu"
-      heading: "Các Khoản Thu"
-      no: "STT"
-      supplier: "Nhà Cung Cấp"
-      table_title: "Tiêu Đề"
-      content: "Nội Dung"
-      amount: "Số Tiền"
-      created_at: "Thời Gian Nhập"
-      created_by: "Người Nhập"
-      actions: "Thao Tác"
-      details: "Xem"
-      edit: "Sửa"
+  accountant:
+    incomes:
+      index:
+        title: "Các Khoản Thu"
+        heading: "Các Khoản Thu"
+        no: "STT"
+        supplier: "Nhà Cung Cấp"
+        table_title: "Tiêu Đề"
+        content: "Nội Dung"
+        amount: "Số Tiền"
+        created_at: "Thời Gian Nhập"
+        created_by: "Người Nhập"
+        actions: "Thao Tác"
+        details: "Xem"
+        edit: "Sửa"
   views:
     pagination:
       first: « VỀ ĐẦU

@@ -1,0 +1,41 @@
+<div class="row row-form nested-fields">
+  <div class="col">
+    <div class="form-group">
+      <%= f.label :section_name, t(".section_label"), class: "d_label my-require" %>
+      <%= f.collection_select :section_name, Section.all, :name, :name_initial, {prompt: true}, {class: "form-control", required: true} %>
+      <div class="invalid-feedback" style="display: block;">
+        <%= f.object.errors.full_messages_for(:section_name).join("\n") %>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <%= f.label :description, t(".description_label"), class: "d_label my-require" %>
+      <%= f.text_field :description, class: "form-control", required: true %>
+      <div class="invalid-feedback" style="display: block;">
+        <%= f.object.errors.full_messages_for(:description).join("\n") %>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <%= f.label :amount, t(".amount_label"), class: "d_label my-require" %>
+      <%= f.number_field :amount, step: 0.01, min: 0, class: "form-control", required: true %>
+      <div class="invalid-feedback" style="display: block;">
+        <%= f.object.errors.full_messages_for(:amount).join("\n") %>
+      </div>
+    </div>
+  </div>
+  <div class="col-1">
+    <div class="form-group">
+      <label class="d_label">
+        <%= t ".action_label" %>
+      </label>
+      <% if f.index != 0 %>
+        <%= link_to_remove_association f, class: "btn btn-danger" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
