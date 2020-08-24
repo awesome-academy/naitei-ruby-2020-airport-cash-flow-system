@@ -21,4 +21,5 @@ class Request < ApplicationRecord
   validates_associated :request_details
 
   scope :by_status_and_datetime, ->{order(status_id: :asc, created_at: :desc)}
+  scope :own_request, ->(user_id){where(user_id: user_id)}
 end

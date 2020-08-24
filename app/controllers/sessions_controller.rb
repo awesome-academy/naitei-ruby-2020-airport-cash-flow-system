@@ -1,13 +1,16 @@
 class SessionsController < ApplicationController
-  def new; end
+  before_action :require_login, except: %i(new create)
+
+  def new
+    return unless logged_in?
+
+    flash[:error] = t ".already_sign_in"
+    redirect_to requests_path
+  end
 
   def create
     user = User.find_by email: params[:session][:email].downcase
     authenticate user
-  end
-
-  def remember_me user
-    params[:session][:remember_me] == Settings.validations.user.checkbox_checked ? remember(user) : forget(user)
   end
 
   def destroy
@@ -20,7 +23,6 @@ class SessionsController < ApplicationController
   def authenticate user
     if user&.authenticate params[:session][:password]
       log_in user
-      remember_me user
       flash[:success] = t ".success_msg"
       redirect_to root_url
     else

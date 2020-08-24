@@ -44,6 +44,10 @@ class User < ApplicationRecord
     role_id == Settings.validations.user.manager_role
   end
 
+  def is_normal_user?
+    role_id == Settings.validations.user.user_role
+  end
+
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
     return false unless digest

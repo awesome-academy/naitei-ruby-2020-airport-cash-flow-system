@@ -2,6 +2,7 @@ vi:
   admin:
     users:
       new:
+        failed_login: "Cần đăng nhập để thực hiện hành động này"
         name_label: "Tên"
         email_label: "Email"
         role_label: "Vai trò"
