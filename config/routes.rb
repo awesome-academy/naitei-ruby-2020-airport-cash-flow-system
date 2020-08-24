@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     namespace :accountant do
       resources :incomes, only: %i(index new create)
+      resources :suppliers, except: %i(show destroy)
     end
 
     namespace :admin do
@@ -16,6 +17,10 @@ Rails.application.routes.draw do
 
     namespace :manager do
       resources :requests, only: %i(show update index)
+    end
+
+    namespace :accountmanager do
+      resources :suppliers, except: %i(show destroy)
     end
 
     resources :requests, except: :destroy

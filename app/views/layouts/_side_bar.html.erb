@@ -79,6 +79,66 @@
           </li>
         </ul>
       </nav>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item has-treeview menu-open">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fas fa-building nav-icon"></i>
+              <p>
+                <%= t ".manage_supplier" %>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            <% end %>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <%= link_to new_accountant_supplier_path, class: "nav-link" do %>
+                  <i class="fas fa-plus-circle nav-icon"></i>
+                  <p><%= t ".create_supplier" %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to accountant_suppliers_path, class: "nav-link" do %>
+                  <i class="fas fa-history nav-icon"></i>
+                  <p><%= t ".list_supplier" %></p>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </nav>
+    <% end %>
+    <% if current_user.accountmanager? %>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item has-treeview menu-open">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fas fa-building nav-icon"></i>
+              <p>
+                <%= t ".manage_supplier" %>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            <% end %>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <%= link_to new_accountmanager_supplier_path, class: "nav-link" do %>
+                  <i class="fas fa-plus-circle nav-icon"></i>
+                  <p><%= t ".create_supplier" %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to accountmanager_suppliers_path, class: "nav-link" do %>
+                  <i class="fas fa-history nav-icon"></i>
+                  <p><%= t ".list_supplier" %></p>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </nav>
     <% end %>
   </div>
 </aside>

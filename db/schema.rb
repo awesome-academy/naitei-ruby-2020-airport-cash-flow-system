@@ -83,9 +83,11 @@ ActiveRecord::Schema.define(version: 2020_08_26_023218) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "taxNum"
+    t.string "taxNum"
     t.string "address"
-    t.boolean "type"
+    t.boolean "sup_type"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_suppliers_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -108,5 +110,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_023218) do
   add_foreign_key "notifications", "users"
   add_foreign_key "request_details", "requests"
   add_foreign_key "requests", "users"
+  add_foreign_key "suppliers", "users"
   add_foreign_key "users", "sections"
 end

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :requests, dependent: :destroy
   has_many :incomes, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :suppliers, dependent: :destroy
   belongs_to :section
 
   scope :users_section, ->(ids){select(:id).where("users.section_id = ?", ids)}

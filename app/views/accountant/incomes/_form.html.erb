@@ -4,7 +4,7 @@
       <div class="form-group">
         <%= f.label :title, t(".title"), class: "my-require" %>
         <%= f.text_field :title, class: "form-control", required: true %>
-        <div class="invalid-feedback" style="display: block;">
+        <div class="invalid-feedback d-block">
           <%= f.object.errors.full_messages_for(:title).join("\n") %>
         </div>
       </div>
