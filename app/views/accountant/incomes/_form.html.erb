@@ -1,0 +1,59 @@
+<%= form_for [:accountant, income], class: "form" do |f| %>
+  <div class="card-body">
+    <div>
+      <div class="form-group">
+        <%= f.label :title, t(".title"), class: "my-require" %>
+        <%= f.text_field :title, class: "form-control", required: true %>
+        <div class="invalid-feedback" style="display: block;">
+          <%= f.object.errors.full_messages_for(:title).join("\n") %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :supplier, t(".supplier"), class: "my-require" %>
+        <select name="income[supplier_id]" class="form-control selectpicker" data-live-search="true">
+          <% suppliers.each do |supplier| %>
+            <option value="<%= supplier.id %>"><%= "#{supplier.name}" %></option>
+          <% end %>
+        </select>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:supplier).join("\n") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :amount, t(".amount"), class: "my-require" %>
+            <%= f.number_field :amount, step: 0.01, min: 0, class: "form-control", required: true %>
+          </div>
+          <div class="invalid-feedback d-block">
+            <%= f.object.errors.full_messages_for(:amount).join("\n") %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <%= f.label :currency, t(".currency"), class: "my-require" %>
+          <select name="income[currency]" class="form-control selectpicker" data-live-search="true">
+            <% currencies.each do |currency| %>
+              <option value="<%= currency.name %>"><%= currency.name %></option>
+            <% end %>
+          </select>
+          <div class="invalid-feedback d-block">
+            <%= f.object.errors.full_messages_for(:currency).join("\n") %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, t(".content"), class: "my-require"%>
+        <%= f.text_area :content, class: "form-control", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:content).join("\n") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

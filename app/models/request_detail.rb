@@ -3,6 +3,6 @@ class RequestDetail < ApplicationRecord
 
   validates :section_name, presence: true
   validates :description, presence: true
-  validates :amount, presence: true
+  validates :amount, presence: true, numericality: {greater_than: Settings.validations.amout_min}
   validates :request, presence: true
 end

@@ -1,0 +1,51 @@
+en:
+  app:
+    dates:
+      format: "%H:%M %Y/%m/%d"
+  accountant:
+    incomes:
+      form:
+        title: "Title"
+        supplier: "Supplier"
+        amount: "Amount"
+        currency: "Currency"
+        content: "Content"
+      index:
+        title: "Incomes List"
+        heading: "Incomes List"
+        num: "No."
+        supplier: "Supplier"
+        table_title: "Title"
+        content: "Content"
+        amount: "Amount"
+        created_at: "Created At"
+        status: "Status"
+        created_by: "Created By"
+        actions: "Actions"
+        details: "Details"
+        edit: "Edit"
+        new_income: "New Income"
+        pending: "pending"
+        approved: "approved"
+        rejected: "rejected"
+        canceled: "canceled"
+        paid: "paid"
+      new:
+        title: "Create New Income"
+        heading: "Create New Income"
+        button: "Create"
+        form_title: "Title"
+      edit:
+        title: "Update Income"
+        heading: "Update Income"
+        button: "Update"
+      create:
+        fail_mess_create: "Add failed, try it again"
+        success_mess: "Added successfully"
+  views:
+    pagination:
+      first: « FIRST
+      last: LAST »
+      next: NEXT ›
+      previous: ‹ PREV
+      truncate: …

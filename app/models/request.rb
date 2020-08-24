@@ -17,11 +17,7 @@ class Request < ApplicationRecord
                      request_details_attributes:
                      [:amount, :description, :section_name, :_destroy]].freeze
 
-  validates :title, presence: true
-  validates :content, presence: true
-  validates :status_id, presence: true
-  validates :currency, presence: true
-  validates :request_details, presence: true
+  validates :title, :content, :status_id, :currency, :request_details, presence: true
   validates_associated :request_details
 
   scope :by_status_and_datetime, ->{order(status_id: :asc, created_at: :desc)}
