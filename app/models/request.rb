@@ -33,4 +33,8 @@ class Request < ApplicationRecord
   def is_pending?
     status_id == Settings.status.pending
   end
+
+  def is_approved?
+    status_id == Settings.status.approved
+  end
 end

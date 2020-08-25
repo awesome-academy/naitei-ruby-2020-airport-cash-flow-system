@@ -49,7 +49,7 @@ vi:
       currency: "ĐV tiền tệ:"
       details: "Chi tiết"
       section: "Bộ phận"
-      des: "Miêu tả"
+      des: "Mô tả"
       amount: "Số tiền"
       go_back: "Quay lại"
       cancel: "Hủy yêu cầu"
@@ -82,6 +82,18 @@ vi:
       action_label: "Xóa"
     show:
       request_not_found: "Bạn không thể xem yêu cầu này"
+    edit:
+      form_title: "Chỉnh sửa yêu cầu"
+      details_title: "Chi tiết"
+      name_label: "Tiêu đề"
+      content_label: "Nội dung"
+      currency_label: "Đơn vị tiền tệ"
+      btn_add: "Thêm hàng"
+      btn_save: "Lưu thay đổi"
+      disable_edit: "Không thể chỉnh sửa"
+    update:
+      request_updated: "Cập nhật thành công"
+      update_failed: "Cập nhật thất bại"
   views:
     pagination:
       first: « VỀ ĐẦU
