@@ -4,6 +4,7 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :currency
       t.text :content
+      t.text :reason
       t.references :user, null: false, foreign_key: true
       t.references :status, null: false, foreign_key: true
 

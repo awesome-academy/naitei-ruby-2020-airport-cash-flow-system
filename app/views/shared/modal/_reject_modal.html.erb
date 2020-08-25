@@ -1,0 +1,23 @@
+<div class="modal fade" id="rejectConfirmModal" tabindex="-1" role="dialog" aria-labelledby="rejectConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <%= form_for [manager, request], remote: true do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t ".confirm_reject" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= f.label :reason, t(".reason"), class: "my-require" %>
+          <%= f.text_field :reason, class: "form-control", required: true %>
+          <%= hidden_field_tag "request[status_id]", Settings.status.rejected %>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>
+          <%= f.submit t(".reject"), class: "btn btn-danger float-right col-3" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

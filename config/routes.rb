@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       resources :users, only: %i(new create)
     end
 
+    namespace :manager do
+      resources :requests, only: %i(show update index)
+    end
+
     resources :requests, except: %i(destroy update edit)
   end
 end

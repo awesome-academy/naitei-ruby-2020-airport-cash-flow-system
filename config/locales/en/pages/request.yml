@@ -2,11 +2,24 @@ en:
   app:
     dates:
       format: "%H:%M %Y/%m/%d"
+  manager:
+    requests:
+      request_not_found: "You don't have permission to see this request"
+      require_reason: "Please fill out reason field"
   shared:
+    modal:
+      reject_modal:
+        confirm_reject: "Are you sure to reject this request ?"
+        close_btn: "Close"
+        reason: "Reason"
+        reject: "Reject"
+      approve_modal:
+        confirm_approve: "Are you sure to approve this request ?"
+        close_btn: "Close"
+        approve: "Approve"
     error_messages:
       error: "error"
-  requests:
-    index:
+    request_list:
       failed_login: "You must be logged in to access this section"
       head: Request List 
       id: ID
@@ -25,25 +38,7 @@ en:
       canceled: canceled
       paid: paid
       new_request: New Request
-    new:
-      failed_login: "You must be logged in to access this section"
-      form_title: "Request form"
-      details_title: "Details"
-      name_label: "Title"
-      content_label: "Content"
-      currency_label: "Currency"
-      btn_add: "Add Row"
-      btn_create: "Create"
-    create:
-      failed_login: "You must be logged in to access this section"
-      request_created: "Requested success"
-      request_failed: "Requested failed"
-    request_detail_fields:
-      section_label: "Section"
-      description_label: "Description"
-      amount_label: "Amount"
-      action_label: "Action"
-    show:
+    request_detail:
       failed_login: "You must be logged in to access this section"
       request_detail: "Advance Request"
       requestor: "Requestor:"
@@ -64,6 +59,29 @@ en:
       rejected: "rejected"
       paid: "paid"
       canceled: "canceled"
+      reject: "Reject"
+      approve: "Approve"
+  requests:
+    new:
+      failed_login: "You must be logged in to access this section"
+      form_title: "Request form"
+      details_title: "Details"
+      name_label: "Title"
+      content_label: "Content"
+      currency_label: "Currency"
+      btn_add: "Add Row"
+      btn_create: "Create"
+    create:
+      failed_login: "You must be logged in to access this section"
+      request_created: "Requested success"
+      request_failed: "Requested failed"
+    request_detail_fields:
+      section_label: "Section"
+      description_label: "Description"
+      amount_label: "Amount"
+      action_label: "Action"
+    show:
+      request_not_found: "You don't have permission to see this request"
   views:
     pagination:
       first: « FIRST
