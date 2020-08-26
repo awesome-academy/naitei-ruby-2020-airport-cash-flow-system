@@ -1,5 +1,6 @@
 module RequestAction
   extend ActiveSupport::Concern
+
   included do
     before_action :visible_request, only: %i(show update edit)
   end

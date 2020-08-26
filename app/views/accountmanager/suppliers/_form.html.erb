@@ -1,0 +1,50 @@
+<%= form_for [:accountmanager, supplier], class: "form" do |f| %>
+  <div class="card-body">
+    <div>
+      <div class="form-group">
+        <%= f.label :name, t(".name"), class: "my-require" %>
+        <%= f.text_field :name, class: "form-control", maxlength: "60", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:name).join("\n") %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :taxNum, t(".taxNum"), class: "my-require" %>
+        <%= f.text_field :taxNum, class: "form-control", maxlength: "14", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:taxNum).join("\n") %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :address, t(".address"), class: "my-require"%>
+        <%= f.text_area :address, class: "form-control", maxlength: "140", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:address).join("\n") %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :sup_type, t(".sup_type"), class: "my-require"%>
+        <div class="col-5">
+          <div class="form-check">
+            <%= f.radio_button(:sup_type, "personal", class: "form-check-input", checked: params[:sup_type] = supplier.personal?)%>
+            <label class="checkbox"><%= t(".personal") %></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <%= f.radio_button(:sup_type, "organization", class: "form-check-input", checked: params[:sup_type] = supplier.organization?) %>
+            <label class="checkbox"><%= t(".organization") %></label>
+          </div>
+        </div>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:sup_type).join("\n") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

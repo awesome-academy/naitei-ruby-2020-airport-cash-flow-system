@@ -8,3 +8,6 @@ vi:
       create_income: "Nhập khoản thu mới"
       my_income: "Các khoản thu đã nhập"
       staff_request: "Yêu cầu từ nhân viên"
+      manage_supplier: "Quản lý nhà cung cấp"
+      create_supplier: "Nhà cung cấp mới"
+      list_supplier: "Danh sách nhà cung cấp"

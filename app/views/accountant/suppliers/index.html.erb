@@ -1,0 +1,59 @@
+<% provide :title, t(".title") %>
+<div class="header">
+  <%= link_to new_accountant_supplier_path, class: "btn btn-success", data: {turbolinks: false} do %>
+    <i class="fa fa-plus"></i> <%= t(".new_supplier") %>
+  <% end %>
+</div>
+<div class="card card-primary">
+  <div>
+    <h2 class="card-title-custom text-center w-100">
+      <%= t ".heading" %>
+    </h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="text-nowrap">
+        <tr>
+          <th><%= t ".num" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".taxNum" %></th>
+          <th><%= t ".address" %></th>
+          <th><%= t ".sup_type" %></th>
+          <th><%= t ".created_by" %></th>
+          <th><%= t ".actions" %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @suppliers.each_with_index do |supplier, index| %>
+        <tr>
+          <td><%= index + 1 + (@page-1)*Settings.pagination.items_per_pages %></td>
+          <td><%= supplier.name %></td>
+          <td><%= supplier.taxNum %></td>
+          <td><%= supplier.address %></td>
+          <td>
+            <span class="text-<%= supplier.personal? ? "primary" : "danger" %>">
+              <%= t ".#{supplier.sup_type}" %>
+            </span>
+          </td>
+          <td><%= supplier.user_name %></td>
+          <% if supplier.user_id == current_user.id %>
+            <td class="text-nowrap text-center">
+              <%= link_to edit_accountant_supplier_path(supplier), class: "btn btn-danger btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".edit") do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
+            </td>
+          <% else %>
+            <td></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+      <%= paginate @suppliers, theme: "twitter-bootstrap-4" %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+vi:
+  shared:
+    sup_not_found: "Không tìm thấy NCC, hoặc bạn không có quyền truy cập."
+  accountant:
+    suppliers:
+      message_err: "không hợp lệ, MST bao gồm 10 hoặc 13 số và có định dạng xxxxxxxxxx hoặc xxxxxxxxxx-xxx"
+      form:
+        name: "Tên"
+        taxNum: "Mã số thuế"
+        address: "Địa chỉ"
+        sup_type: "Loại nhà cung cấp"
+        personal: "Cá nhân"
+        organization: "Tổ chức"
+      index:
+        title: "Danh sách nhà cung cấp"
+        heading: "Danh sách nhà cung cấp"
+        num: "STT."
+        name: "Tên"
+        taxNum: "Mã số thuế"
+        address: "Địa chỉ"
+        sup_type: "Loại"
+        actions: "Thao Tác"
+        details: "Xem"
+        edit: "Sửa"
+        new_supplier: "Nhà cung cấp mới"
+        personal: "Cá nhân"
+        organization: "Tổ chức"
+      new:
+        title: "Thêm Mới Nhà Cung Cấp"
+        heading: "Thêm Mới Nhà Cung Cấp"
+        button: "Tạo"
+      edit:
+        title: "Cập Nhập Nhà Cung Cấp"
+        heading: "Cập Nhập Nhà Cung Cấp"
+        button: "Cập Nhập"
+      create:
+        success_mess: "Đã Thêm"
+        fail_mess_create: "Thêm không thành công, hãy thử lại"
+      update:
+        fail_mess: "Thay đổi không thành công"
+        success_mess: "Nhà cung cấp đã được cập nhật"
+  accountmanager:
+    suppliers:
+      message_err: "không hợp lệ, MST bao gồm 10 hoặc 13 số và có định dạng xxxxxxxxxx hoặc xxxxxxxxxx-xxx"
+      form:
+        name: "Tên"
+        taxNum: "Mã số thuế"
+        address: "Địa chỉ"
+        sup_type: "Loại nhà cung cấp"
+        personal: "Cá nhân"
+        organization: "Tổ chức"
+      index:
+        title: "Danh sách nhà cung cấp"
+        heading: "Danh sách nhà cung cấp"
+        num: "STT."
+        name: "Tên"
+        taxNum: "Mã số thuế"
+        address: "Địa chỉ"
+        sup_type: "Loại"
+        actions: "Thao Tác"
+        details: "Xem"
+        edit: "Sửa"
+        new_supplier: "Nhà cung cấp mới"
+        personal: "Cá nhân"
+        organization: "Tổ chức"
+      new:
+        title: "Thêm Mới Nhà Cung Cấp"
+        heading: "Thêm Mới Nhà Cung Cấp"
+        button: "Tạo"
+      edit:
+        title: "Cập Nhập Nhà Cung Cấp"
+        heading: "Cập Nhập Nhà Cung Cấp"
+        button: "Cập Nhập"
+      create:
+        success_mess: "Đã Thêm"
+        fail_mess_create: "Thêm không thành công, hãy thử lại"
+      update:
+        fail_mess: "Thay đổi không thành công"
+        success_mess: "Nhà cung cấp đã được cập nhật"

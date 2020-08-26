@@ -1,0 +1,79 @@
+en:
+  shared:
+    sup_not_found: "No Supplier Found, or you don't have access."
+  accountant:
+    suppliers:
+      message_err: "is invalid, only 10 or 13 numbers! Properly formatted: xxxxxxxxxx or xxxxxxxxxx-xxx (x is number)"
+      form:
+        name: "Name"
+        taxNum: "Taxpayer Identification Number"
+        address: "Address"
+        sup_type: "Supplier Type"
+        personal: "Personal"
+        organization: "Organization"
+      index:
+        title: "Suppliers List"
+        heading: "Suppliers List"
+        num: "No."
+        name: "Name"
+        taxNum: "Tax Number"
+        address: "Address"
+        sup_type: "Supplier Type"
+        actions: "Actions"
+        details: "Details"
+        edit: "Edit"
+        new_supplier: "New Supplier"
+        personal: "Personal"
+        organization: "Organization"
+      new:
+        title: "Create New Supplier"
+        heading: "Create New Supplier"
+        button: "Create"
+      edit:
+        title: "Update Supplier"
+        heading: "Update Supplier"
+        button: "Update"
+      create:
+        fail_mess_create: "Add failed, try it again"
+        success_mess: "Added successfully"
+      update:
+        fail_mess: "Cannot update"
+        success_mess: "Supplier has been updated"
+  accountmanager:
+    suppliers:
+      message_err: "is invalid, only 10 or 13 numbers! Properly formatted: xxxxxxxxxx or xxxxxxxxxx-xxx (x is number)"
+      form:
+        name: "Name"
+        taxNum: "Taxpayer Identification Number"
+        address: "Address"
+        sup_type: "Supplier Type"
+        personal: "Personal"
+        organization: "Organization"
+      index:
+        title: "Suppliers List"
+        heading: "Suppliers List"
+        num: "No."
+        name: "Name"
+        taxNum: "Tax Number"
+        address: "Address"
+        sup_type: "Supplier Type"
+        actions: "Actions"
+        details: "Details"
+        edit: "Edit"
+        new_supplier: "New Supplier"
+        personal: "Personal"
+        organization: "Organization"
+      new:
+        title: "Create New Supplier"
+        heading: "Create New Supplier"
+        button: "Create"
+      edit:
+        title: "Update Supplier"
+        heading: "Update Supplier"
+        button: "Update"
+      create:
+        fail_mess_create: "Add failed, try it again"
+        success_mess: "Added successfully"
+      update:
+        fail_mess: "Cannot update"
+        success_mess: "Supplier has been updated"

@@ -14,6 +14,15 @@ User.create!(
   section_id: 1
 )
 
+#Create accountant manager
+User.create!(
+  name: "Accountant Manager",
+  email: "acc-manager@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: 5,
+  section_id: 1
+)
 
 # Generate 2 managers
 2.times do |n|
@@ -90,10 +99,23 @@ requests = Request.order(:created_at).take(20)
 end
 
 # Generate a bunch of additional suppliers.
-# TYPE: true =>personal, false =>company
+# TYPE: true =>personal
 10.times do |n|
   name = Faker::Name.name
-  Supplier.create!(name: name)
+  taxNumber = Faker::Number.number(digits: 10)
+  address = Faker::Address.city
+  sup_type = true
+  user_id = 5
+  Supplier.create!(name: name, taxNum: taxNumber, address: address, sup_type: sup_type, user_id: user_id)
+end
+# TYPE: false =>company
+10.times do |n|
+  name = Faker::Name.name
+  taxNumber = Faker::Number.number(digits: 10)
+  address = Faker::Address.city
+  sup_type = false
+  user_id = 2
+  Supplier.create!(name: name, taxNum: taxNumber, address: address, sup_type: sup_type, user_id: user_id)
 end
 
 # Generate income for a subset of users.
