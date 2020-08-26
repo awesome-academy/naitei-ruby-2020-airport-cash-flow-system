@@ -43,7 +43,9 @@
                 <i class="fa fa-eye"></i>
               <% end %>
             <% else %>
-              <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title= <%= t ".edit" %> ><i class="fa fa-edit"></i></button>
+              <%= link_to edit_request_path(request), class: "btn btn-danger btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".edit") do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
               <%= link_to request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
                 <i class="fa fa-eye"></i>
               <% end %>

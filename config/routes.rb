@@ -18,6 +18,6 @@ Rails.application.routes.draw do
       resources :requests, only: %i(show update index)
     end
 
-    resources :requests, except: %i(destroy update edit)
+    resources :requests, except: :destroy
   end
 end

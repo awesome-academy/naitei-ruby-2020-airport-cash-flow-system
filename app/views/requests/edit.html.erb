@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-body" id="form-request">
+    <div>
+      <h2 class="card-title-custom text-center w-100">
+        <%= t ".form_title" %>
+      </h2>
+    </div>
+    <%= form_for @request do |f| %>
+      <div class="row row-form">
+        <%= f.label :title, t(".name_label"), class: "my-require" %>
+        <%= f.text_field :title, class: "form-control", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:title).join("\n") %>
+        </div>
+      </div>
+      <%= hidden_field_tag "request[user_id]", current_user.id %>
+      <%= hidden_field_tag "request[status_id]", current_user.is_manager? ? Settings.status.approved : Settings.status.pending %>
+      <div class="row row-form">
+        <%= f.label :content, t(".content_label"), class: "my-require" %>
+        <%= f.text_area :content, class: "form-control", required: true %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:content).join("\n") %>
+        </div>
+      </div>
+      <div class="row row-form">
+        <%= f.label :currency, t(".currency_label"), class: "my-require" %>
+        <%= f.collection_select :currency , Currency.all, :name, :name_initial, {prompt: true}, {class: "form-control", required: true} %>
+        <div class="invalid-feedback d-block">
+          <%= f.object.errors.full_messages_for(:currency).join("\n") %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-12">
+          <h3 class="text-center">
+            <%= t ".details_title" %>
+          </h3>
+        </div>
+      </div>
+      <%= f.fields_for :request_details do |builder| %>
+        <%= render "request_detail_fields", f: builder %>
+      <% end %>
+      <div class="row row-form">
+        <%= link_to_add_association t(".btn_add"), f, :request_details, :class => "btn btn-success" %>
+      </div>
+      <div class="row row-form">
+        <%= f.submit t(".btn_save"), class: "btn btn-primary col-2 ml-auto" %>
+      </div>
+    <% end %>
+  </div>
+</div>

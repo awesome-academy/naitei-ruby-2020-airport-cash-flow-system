@@ -82,6 +82,18 @@ en:
       action_label: "Action"
     show:
       request_not_found: "You don't have permission to see this request"
+    edit:
+      form_title: "Edit request"
+      details_title: "Detial"
+      name_label: "Title"
+      content_label: "Content"
+      currency_label: "Currency"
+      btn_add: "Add"
+      btn_save: "Save change"
+      disable_edit: "Edit disable"
+    update:
+      request_updated: "Request updated successfull"
+      update_failed: "Request updated fail"
   views:
     pagination:
       first: « FIRST
