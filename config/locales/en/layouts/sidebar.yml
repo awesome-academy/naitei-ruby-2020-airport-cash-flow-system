@@ -1,10 +1,10 @@
 en:
   layouts:
     side_bar:
-      manage_request: "Manage request"
-      create_request: "Create request"
-      my_request: "My requests"
-      manage_income: "Manage income"
-      create_income: "New income"
-      my_income: "Incomes List"
-      staff_request: "Staff's requests"
+      manage_request: "Manage Requests"
+      create_request: "Create Request"
+      my_request: "My Requests"
+      manage_income: "Manage Incomes"
+      create_income: "Create Income"
+      my_income: "Added Incomes"
+      staff_request: "Staff's Requests"

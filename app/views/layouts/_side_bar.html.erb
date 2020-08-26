@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-  <%= link_to "#", class: "brand-link" do %>
+  <%=link_to "#", class: "brand-link" do %>
     <%= image_tag Settings.logo.link, alt: "CFS logo", width: Settings.logo.img_size, height: Settings.logo.img_size, class: "brand-image img-circle elevation-3" %>
     <span class="brand-text font-weight-light"><%= Settings.logo.logo_txt %></span>
   <% end %>
@@ -9,7 +9,7 @@
         <%= image_tag Settings.image.link_user, alt: "user image", class: "img-circle elevation-2" %>
       </div>
       <div class="info">
-        <%= link_to "#", class: "d-block" do %>
+        <%=link_to "#", class: "d-block" do %>
           <%= current_user.name %>
         <% end %>
       </div>
@@ -17,7 +17,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item has-treeview menu-open">
-          <%= link_to "#", class: "nav-link" do %>
+          <%=link_to "#", class: "nav-link" do %>
             <i class="far fa-hourglass nav-icon"></i>
             <p>
               <%= t ".manage_request" %>
@@ -25,22 +25,22 @@
             </p>
           <% end %>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <%= link_to new_request_path, class: "nav-link" do %>
-                <i class="fas fa-plus-circle nav-icon"></i>
+            <li class="nav-item nav-sub-item">
+              <%= active_link_to new_request_path, class: "nav-link", active: :exclusive do %>
+                <i class="fas fa-plus-circle fa-lg"></i>
                 <p><%= t ".create_request" %></p>
               <% end %>
             </li>
-            <li class="nav-item">
-              <%= link_to requests_path, class: "nav-link" do %>
-                <i class="fas fa-history nav-icon"></i>
+            <li class="nav-item nav-sub-item">
+              <%= active_link_to requests_path, class: "nav-link", active: :exclusive do %>
+                <i class="fas fa-history fa-lg"></i>
                 <p><%= t ".my_request" %></p>
               <% end %>
             </li>
             <% if current_user.manager? %>
-              <li class="nav-item">
-                <%= link_to manager_requests_path, class: "nav-link" do %>
-                  <i class="fas fa-list nav-icon"></i>
+              <li class="nav-item nav-sub-item">
+                <%= active_link_to manager_requests_path, class: "nav-link", active: :exclusive do %>
+                  <i class="fas fa-list fa-lg"></i>
                   <p><%= t ".staff_request" %></p>
                 <% end %>
               </li>
@@ -63,15 +63,15 @@
               </p>
             <% end %>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <%= link_to new_accountant_income_path, class: "nav-link" do %>
-                  <i class="fas fa-plus-circle nav-icon"></i>
+              <li class="nav-item nav-sub-item">
+                <%= active_link_to new_accountant_income_path, class: "nav-link", active: :exclusive do %>
+                  <i class="fas fa-plus-circle fa-lg"></i>
                   <p><%= t ".create_income" %></p>
                 <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to accountant_incomes_path, class: "nav-link" do %>
-                  <i class="fas fa-history nav-icon"></i>
+              <li class="nav-item nav-sub-item">
+                <%= active_link_to accountant_incomes_path, class: "nav-link", active: :exclusive do %>
+                  <i class="fas fa-history fa-lg"></i>
                   <p><%= t ".my_income" %></p>
                 <% end %>
               </li>

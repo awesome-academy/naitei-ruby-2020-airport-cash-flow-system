@@ -1,19 +1,16 @@
 <%= render "static_pages/header" %>
-<div class="container">
-  <div class="row mt-5">
+<div class="masthead">
+  <div class="container">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card card-signin my-5">
+      <div class="card card-signin my-4">
         <div class="card-body">
-          <div class="text-left txt-label mt-1 mb-5">
-            <%= t ".sign_in" %>
-          </div>
           <%= form_for :session, url: login_path, html: {class: "form-signin"} do |f| %>
             <div class="form-label-group">
-              <%= f.email_field :email, class: "form-control", placeholer: "Email address" %>
+              <%= f.email_field :email, class: "form-control", placeholer: t(".email_label"), required: true %>
               <%= f.label :email, t(".email_label") %>
             </div>
             <div class="form-label-group">
-              <%= f.password_field :password, class: "form-control", placeholer: "Password", autocomplete: "on", required: true %>
+              <%= f.password_field :password, class: "form-control", placeholer: t(".password_label"), autocomplete: "on", required: true %>
               <%= f.label :password, t(".password_label") %>
             </div>
             <%= f.submit t(".btn_label"), class: "btn btn-lg btn-primary btn-block text-uppercase" %>
