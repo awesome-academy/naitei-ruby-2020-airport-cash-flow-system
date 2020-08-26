@@ -30,7 +30,6 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new request_params
-
     if @request.save
       flash[:success] = t ".request_created"
       redirect_to request_path @request
@@ -53,7 +52,7 @@ class RequestsController < ApplicationController
   def able_to_edit
     request = Request.find_by id: params[:id]
 
-    return if request.is_pending? || current_user.is_manager? && request.is_approved?
+    return if request.pending? || current_user.manager? && request.approved?
 
     flash[:error] = t ".disable_edit"
     redirect_to root_url

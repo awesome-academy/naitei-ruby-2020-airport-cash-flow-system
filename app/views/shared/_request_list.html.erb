@@ -33,8 +33,9 @@
           <td><%= I18n.localize request.created_at, format: t("app.dates.format") %></td>
           <td><%= number_to_currency sum_amount(request).values[0] %> </td>
           <td>
-            <small class="badge badge-<%= modify_label_color request.status_name.parameterize.underscore.to_sym %>" style="text-decoration: <%= request.status_name=="canceled"? "line-through" : "none" %>;">
-              <%= t ".#{request.status_name}" %>
+            <small class="badge badge-<%= modify_label_color request.status.parameterize.underscore.to_sym %>"
+              style="text-decoration: <%= request.status=="canceled"? "line-through" : "none" %>;">
+              <%= t ".#{request.status}" %>
             </small>
           </td>
           <td>

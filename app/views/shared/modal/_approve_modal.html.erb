@@ -9,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= hidden_field_tag "request[status_id]", Settings.status.approved %>
+          <%= hidden_field_tag "request[status]", Request.statuses.key(Settings.status.request.approved) %>
           <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>
           <%= f.submit t(".approve"), class: "btn btn-success float-right col-3" %>
         </div>

@@ -25,7 +25,8 @@ class Accountant::IncomesController < Accountant::ApplicationController
   private
 
   def income_params
-    params.require(:income).permit(Income::INCOMES_PARAMS).merge user_id: current_user.id, status_id: Settings.pending
+    income_params = params.require(:income).permit(Income::INCOMES_PARAMS)
+    income_params.merge user_id: current_user.id, status: Income.statuses.key(Settings.status.income.pending)
   end
 
   def fetch_suppliers

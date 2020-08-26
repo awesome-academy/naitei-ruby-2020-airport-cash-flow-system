@@ -11,7 +11,7 @@
         <div class="modal-body">
           <%= f.label :reason, t(".reason"), class: "my-require" %>
           <%= f.text_field :reason, class: "form-control", required: true %>
-          <%= hidden_field_tag "request[status_id]", Settings.status.rejected %>
+          <%= hidden_field_tag "request[status]", Request.statuses.key(Settings.status.request.rejected) %>
         </div>
         <div class="modal-body">
           <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>

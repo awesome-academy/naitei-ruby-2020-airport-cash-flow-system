@@ -1,14 +1,8 @@
-# Role_id: 1-admin, 2-manager, 3-accountant, 4-enduser
+# role: 1-admin, 2-manager, 3-accountant, 4-enduser
 
 # Create some main sections.
 Section.create! name: "Section A"
 Section.create! name: "Section B"
-
-#Create role
-Role.create! name: "Admin"
-Role.create! name: "Accountant"
-Role.create! name: "Manager"
-Role.create! name: "Normal User"
 
 #Create admin
 User.create!(
@@ -16,7 +10,7 @@ User.create!(
   email: "admin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  role_id: 1,
+  role: 1,
   section_id: 1
 )
 
@@ -26,12 +20,12 @@ User.create!(
   name = "Manager#{n+1}"
   email = "manager#{n+1}@gmail.com"
   password = "password"
-  role_id = 3
+  role = 3
   section_id = 1
   User.create!(
     name: name,
     email: email,
-    role_id: role_id,
+    role: role,
     password: password,
     password_confirmation: password,
     section_id: section_id
@@ -43,12 +37,12 @@ end
   name = "Accountant#{n+1}"
   email = "accountant#{n+1}@gmail.com"
   password = "password"
-  role_id = 2
+  role = 2
   section_id = 1
   User.create!(
     name: name,
     email: email,
-    role_id: role_id,
+    role: role,
     password: password,
     password_confirmation: password,
     section_id: section_id
@@ -60,24 +54,17 @@ end
   name = Faker::Name.name
   email = "user#{n+1}@gmail.com"
   password = "password"
-  role_id = 4
+  role = 4
   section_id = 1
   User.create!(
     name: name,
     email: email,
-    role_id: role_id,
+    role: role,
     password: password,
     password_confirmation: password,
     section_id: section_id
   )
 end
-
-# Create status
-Status.create! name: "pending" #1
-Status.create! name: "approved" #2
-Status.create! name: "paid" #3
-Status.create! name: "rejected" #4
-Status.create! name: "canceled" #5
 
 # Generate requests for a subset of users.
 users = User.order(:created_at).take(10)
@@ -85,12 +72,12 @@ users = User.order(:created_at).take(10)
   title = Faker::Lorem.sentence(word_count: 2)
   content = Faker::Lorem.sentence(word_count: 20)
   currency = Faker::Currency.code
-  status_id = 1
+  status = 1
   users.each { |user| user.requests.create!(
       title: title,
       content: content,
       currency: currency,
-      status_id: status_id
+      status: status
     )}
 end
 
@@ -117,14 +104,14 @@ users = User.order(:created_at).take(5)
   amount = 100000
   currency = "USD"
   supplier_id = 1
-  status_id = 1
+  status = 1
   users.each { |user| user.incomes.create!(
     title: title,
     content: content,
     amount: amount,
     currency: currency,
     supplier_id: supplier_id,
-    status_id: status_id
+    status: status
     )
   }
 end

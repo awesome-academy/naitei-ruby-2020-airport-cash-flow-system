@@ -8,7 +8,7 @@ class Manager::ApplicationController < ApplicationController
   private
 
   def require_manager
-    return if current_user.is_manager?
+    return if current_user.manager?
 
     redirect_to root_path, flash: {error: t(".required_manager")}
   end
