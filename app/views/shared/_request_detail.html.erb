@@ -42,8 +42,9 @@
         </div>
       </div>
       <div class="col-9" id="req_status_name">
-        <small class="badge badge-<%= modify_label_color request.status_name.parameterize.underscore.to_sym %>" style="text-decoration: <%= request.status_name == "canceled"? "line-through" : "none" %>;">
-          <%= t ".#{request.status_name}" %>
+        <small class="badge badge-<%= modify_label_color request.status.parameterize.underscore.to_sym %>"
+          style="text-decoration: <%= request.status == "canceled"? "line-through" : "none" %>;">
+          <%= t ".#{request.status}" %>
         </small>
       </div>
     </div>
@@ -122,7 +123,7 @@
       </div>
       <div class="col-6">
         <div class="float-right inline">
-          <% if check_requests && request.is_pending? %>
+          <% if check_requests && request.pending? %>
             <%= link_to  "#", class: "btn btn-danger mr-2", id: "reject_btn", data: {toggle: "modal", target: "#rejectConfirmModal"} do %>
               <%= t ".reject" %>
             <% end %>

@@ -35,8 +35,8 @@
           <td><%= number_to_currency(income.amount) %></td>
           <td><%= I18n.localize income.created_at, format: t("app.dates.format") %></td>
           <td>
-            <small class="badge badge-<%= modify_label_color income.status_name.parameterize.underscore.to_sym %>" style="text-decoration: <%= (income.status_name=="canceled")? "line-through" : "none" %>;">
-              <%= t ".#{income.status_name}" %>
+            <small class="badge badge-<%= modify_label_color income.status.parameterize.underscore.to_sym %>" style="text-decoration: <%= (income.status=="canceled")? "line-through" : "none" %>;">
+              <%= t ".#{income.status}" %>
             </small>
           </td>
           <td><%= income.user_name %></td>

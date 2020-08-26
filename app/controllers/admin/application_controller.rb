@@ -8,7 +8,7 @@ class Admin::ApplicationController < ApplicationController
   private
 
   def require_admin
-    return if current_user.is_admin?
+    return if current_user.admin?
 
     redirect_to root_path, flash: {error: t(".required_admin")}
   end

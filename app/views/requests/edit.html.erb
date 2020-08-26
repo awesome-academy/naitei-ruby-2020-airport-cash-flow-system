@@ -14,7 +14,7 @@
         </div>
       </div>
       <%= hidden_field_tag "request[user_id]", current_user.id %>
-      <%= hidden_field_tag "request[status_id]", current_user.is_manager? ? Settings.status.approved : Settings.status.pending %>
+      <%= hidden_field_tag "request[status]", current_user.manager? ? Request.statuses.key(Settings.status.request.approved) : Request.statuses.key(Settings.status.request.pending) %>
       <div class="row row-form">
         <%= f.label :content, t(".content_label"), class: "my-require" %>
         <%= f.text_area :content, class: "form-control", required: true %>

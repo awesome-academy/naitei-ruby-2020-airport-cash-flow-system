@@ -1,14 +1,15 @@
 class User < ApplicationRecord
+  enum role: {admin: 1, accountant: 2, manager: 3, user: 4, accountmanager: 5}
+
   has_many :requests, dependent: :destroy
   has_many :incomes, dependent: :destroy
   has_many :notifications, dependent: :destroy
   belongs_to :section
-  belongs_to :role
 
   scope :users_section, ->(ids){select(:id).where("users.section_id = ?", ids)}
 
   VALID_EMAIL_REGEX = Settings.validations.user.email_regex
-  USERS_PARAMS = %i(name email password password_confirmation role_id section_id).freeze
+  USERS_PARAMS = %i(name email password password_confirmation role section_id).freeze
   attr_accessor :remember_token
 
   validates :name, presence: true,
@@ -32,18 +33,6 @@ class User < ApplicationRecord
 
   def forget
     update remember_digest: nil
-  end
-
-  def is_accountant?
-    role_id == Settings.validations.user.accountant_role
-  end
-
-  def is_admin?
-    role_id == Settings.validations.user.admin_role
-  end
-
-  def is_manager?
-    role_id == Settings.validations.user.manager_role
   end
 
   def authenticated? attribute, token

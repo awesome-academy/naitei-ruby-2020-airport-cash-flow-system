@@ -5,10 +5,11 @@ vi:
   accountant:
     incomes:
       index:
+        new_income: "Tạo nguồn thu mới"
         failed_login: "Cần đăng nhập để thực hiện hành động này"
         title: "Các Khoản Thu"
         heading: "Các Khoản Thu"
-        no: "STT"
+        num: "STT"
         supplier: "Nhà Cung Cấp"
         table_title: "Tiêu Đề"
         content: "Nội Dung"
@@ -18,6 +19,19 @@ vi:
         actions: "Thao Tác"
         details: "Xem"
         edit: "Sửa"
+      new:
+        heading: "Nhập Khoản Thu"
+        button: "Tạo"
+        form_title: "Tiêu Đề"
+      create:
+        success_mess: "Đã Thêm"
+        fail_mess_create: "Thêm không thành công, hãy thử lại"
+      form:
+        title: "Tiêu Đề"
+        supplier: "Nhà Cung Cấp"
+        amount: "Số Tiền"
+        currency: "Đơn vị tiền tệ"
+        content: "Nội Dung"
   views:
     pagination:
       first: « VỀ ĐẦU

@@ -8,8 +8,12 @@
         <%= f.text_field :name, class: "form-control" %>
         <%= f.label :email, t(".email_label") %>
         <%= f.email_field :email, class: "form-control" %>
-        <%= f.label :role_id, t(".role_label") %>
-        <%= f.collection_select :role_id, Role.all, :id, :name_initial, {prompt: true}, {class: "form-control"} %>
+        <%= f.label :role, t(".role_label") %>
+        <select name="user[role]", class="form-control">
+          <% User.roles.each do |key, value| %>
+              <option value=<%= key %>><%= key %></option>
+          <% end %>
+        </select>
         <%= f.label :section_id, t(".section_label") %>
         <%= f.collection_select :section_id, Section.all, :id, :name_initial, {prompt: true}, {class: "form-control"} %>
         <%= f.label :password, t(".password_label") %>

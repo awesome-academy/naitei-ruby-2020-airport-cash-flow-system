@@ -13,9 +13,9 @@ module RequestAction
   private
 
   def visible_request
-    @request = if current_user.is_accountant?
+    @request = if current_user.accountant?
                  Request.find_by id: params[:id]
-               elsif current_user.is_manager?
+               elsif current_user.manager?
                  visible_request_for_manager
                else
                  visible_request_for_user

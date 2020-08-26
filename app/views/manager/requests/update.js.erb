@@ -1,6 +1,6 @@
 $("#reject_btn").remove()
 $("#approve_btn").remove()
-<% if params[:request][:status_id].to_i == Settings.status.rejected %>
+<% if params[:request][:status] == Request.statuses.key(Settings.status.request.rejected) %>
   $("#req_status_name").html($("#reject-label"))
   $("#rejectConfirmModal").modal('hide');
 <% else %>

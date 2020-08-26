@@ -8,7 +8,7 @@ class Accountant::ApplicationController < ApplicationController
   private
 
   def require_accountant
-    return if current_user.is_accountant?
+    return if current_user.accountant?
 
     redirect_to root_path, flash: {error: t(".required_accountant")}
   end

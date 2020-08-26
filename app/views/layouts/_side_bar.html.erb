@@ -37,7 +37,7 @@
                 <p><%= t ".my_request" %></p>
               <% end %>
             </li>
-            <% if current_user.is_manager? %>
+            <% if current_user.manager? %>
               <li class="nav-item">
                 <%= link_to manager_requests_path, class: "nav-link" do %>
                   <i class="fas fa-list nav-icon"></i>
@@ -51,7 +51,7 @@
         </li>
       </ul>
     </nav>
-    <% if current_user.is_accountant? %>
+    <% if current_user.accountant? %>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview menu-open">

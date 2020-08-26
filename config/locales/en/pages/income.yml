@@ -5,10 +5,11 @@ en:
   accountant:  
     incomes:
       index:
+        new_income: "New income"
         failed_login: "You must be logged in to access this section"
         title: "Income Table"
         heading: "Income Table"
-        no: "No."
+        num: "No."
         supplier: "Supplier"
         table_title: "Title"
         content: "Content"
@@ -18,6 +19,19 @@ en:
         actions: "Actions"
         details: "Details"
         edit: "Edit"
+      new:
+        heading: "Create New Income"
+        button: "Create"
+        form_title: "Title"
+      create:
+        fail_mess_create: "Add failed, try it again"
+        success_mess: "Added successfully"
+      form:
+        title: "Title"
+        supplier: "Supplier"
+        amount: "Amount"
+        currency: "Currency"
+        content: "Content"
   views:
     pagination:
       first: « FIRST

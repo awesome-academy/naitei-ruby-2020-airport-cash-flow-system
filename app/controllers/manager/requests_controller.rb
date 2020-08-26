@@ -9,13 +9,13 @@ class Manager::RequestsController < Manager::ApplicationController
   def show; end
 
   def update
-    status_change = params[:request][:status_id]
+    status_change = params[:request][:status]
     reason = params[:request][:reason]
     respond_to do |format|
       format.html{redirect_to manager_request_url}
       format.js
     end
-    return if @request.update status_id: status_change, reason: reason
+    return if @request.update status: status_change, reason: reason
 
     flash[:error] = t ".require_reason"
     redirect_to root_url
