@@ -1,0 +1,6 @@
+<% if params[:status_canceled] == "true" %>
+  $("#cancel_btn").remove()
+  $("#edit_btn").remove()
+  $("#req_status_name").html($("#canceled-label"))
+  $("#cancelConfirmModal").modal('hide');
+<% end %>

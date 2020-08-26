@@ -1,6 +1,6 @@
 <div class="modal fade" id="rejectConfirmModal" tabindex="-1" role="dialog" aria-labelledby="rejectConfirmModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <%= form_for [manager, request], remote: true do |f| %>
+    <%= form_for [role, request], remote: true do |f| %>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel"><%= t ".confirm_reject" %></h5>

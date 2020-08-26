@@ -14,9 +14,17 @@ vi:
         reason: "Lý do"
         reject: "Từ chối"
       approve_modal:
-        confirm_approve: "Bạn có chắc chắn đồng ý yêu cầu này ?"
+        confirm_approve: "Bạn có chắc chắn chấp nhận yêu cầu này ?"
         close_btn: "Đóng"
         approve: "Chấp nhận"
+      cancel_modal:
+        confirm_cancel: "Bạn có chắc chắn hủy bỏ yêu cầu này ?"
+        close_btn: "Đóng"
+        cancel: "Hủy bỏ"
+      paid_modal:
+        confirm_paid: "Bạn có chắc chắn duyệt chi yêu cầu này ?"
+        close_btn: "Đóng"
+        paid: "Duyệt"
     error_messages:
       error: "lỗi"
     request_list:
@@ -61,6 +69,7 @@ vi:
       canceled: "huỷ bỏ"
       reject: "Từ chối"
       approve: "Chấp nhận"
+      paid: "Duyệt"
   requests:
     new:
       failed_login: "Cần đăng nhập để thực hiện hành động này"
