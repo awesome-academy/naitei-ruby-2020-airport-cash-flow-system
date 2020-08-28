@@ -17,6 +17,14 @@ en:
         confirm_approve: "Are you sure to approve this request ?"
         close_btn: "Close"
         approve: "Approve"
+      cancel_modal:
+        confirm_cancel: "Are you sure to cancel this request ?"
+        close_btn: "Close"
+        cancel: "Cancel"
+      paid_modal:
+        confirm_paid: "Are you sure to pay for this request ?"
+        close_btn: "Close"
+        paid: "Paid"
     error_messages:
       error: "error"
     request_list:
@@ -57,7 +65,7 @@ en:
       pending: "pending"
       approved: "approved"
       rejected: "rejected"
-      paid: "paid"
+      paid: "Paid"
       canceled: "canceled"
       reject: "Reject"
       approve: "Approve"

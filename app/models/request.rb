@@ -18,7 +18,11 @@ class Request < ApplicationRecord
                      request_details_attributes:
                      [:amount, :description, :section_name, :_destroy]].freeze
 
-  validates :title, :content, :status, :currency, :request_details, presence: true
+  validates :title, presence: true,
+                    length: {maximum: Settings.validations.request.title_max_length}
+  validates :content, presence: true,
+                    length: {maximum: Settings.validations.request.content_max_length}
+  validates :status, :currency, :request_details, presence: true
   validates :reason, presence: true, if: :rejected?
   validates_associated :request_details
 
@@ -26,4 +30,20 @@ class Request < ApplicationRecord
   scope :own_request, ->(user_id){where(user_id: user_id)}
   scope :find_requests_by_section, ->(section_id){where user_id: User.users_section(section_id)}
   scope :except_own_request, ->(user_id){where.not user_id: user_id}
+  scope :except_cancel_request, ->{where.not status: Settings.status.request.canceled}
+  scope :approved_requests, ->{where status: Settings.status.request.approved}
+  scope :paid_requests, ->{where status: Settings.status.request.paid}
+
+  def paid_request! status_change, request
+    ActiveRecord::Base.transaction do
+      request.update! status: status_change
+
+      History.create!(
+        request_id: request.id,
+        paid_time: Time.now.utc
+      )
+    end
+  rescue ActiveRecord::RecordInvalid => e
+    logger e.message
+  end
 end

@@ -24,6 +24,6 @@ class Manager::RequestsController < Manager::ApplicationController
   private
 
   def section_request
-    Request.find_requests_by_section(current_user.section_id).except_own_request current_user.id
+    Request.find_requests_by_section(current_user.section_id).except_own_request(current_user.id).except_cancel_request
   end
 end

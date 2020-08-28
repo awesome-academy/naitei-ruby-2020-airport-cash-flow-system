@@ -1,0 +1,19 @@
+<div class="modal fade" id="paidConfirmModal" tabindex="-1" role="dialog" aria-labelledby="paidConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <%= form_for [role, request], remote: true do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t ".confirm_paid" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= hidden_field_tag "request[status]", Request.statuses.key(Settings.status.request.paid) %>
+          <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>
+          <%= f.submit t(".paid"), class: "btn btn-warning float-right col-3 text-white" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

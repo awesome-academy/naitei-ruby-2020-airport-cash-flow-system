@@ -116,6 +116,8 @@
         <div class="mr-auto">
           <% if check_requests %>
             <%= link_to t(".go_back"), manager_requests_path, class: "btn btn-primary" %>
+          <% elsif current_user.accountant? %>
+            <%= link_to t(".go_back"), accountant_requests_path, class: "btn btn-primary" %>
           <% else %>
             <%= link_to t(".go_back"), requests_path, class: "btn btn-primary" %>
           <% end %>
@@ -129,7 +131,7 @@
             <% end %>
 
             <!-- Modal -->
-            <%= render "shared/modal/reject_modal", manager: :manager, request: request %>
+            <%= render "shared/modal/reject_modal", role: :manager, request: request %>
             <%= link_to "#", class: "btn btn-success mr-2", id: "approve_btn", data: {toggle: "modal", target: "#approveConfirmModal"} do %>
               <%= t ".approve" %>
             <% end %>
@@ -137,16 +139,31 @@
             <!-- Modal -->
             <%= render "shared/modal/approve_modal", manager: :manager, request: request %>
           <% end %>
-          <% unless check_requests %>
-            <%= link_to t(".cancel"), "#", class: "btn btn-secondary mr-2" %>
-            <%= link_to t(".edit"), edit_request_path(request), class: "btn btn-primary mr-2" %>
+          <% if !check_requests && (request.pending? || request.approved? && current_user.manager?) %>
+            <%= link_to "#", class: "btn btn-secondary mr-2", id: "cancel_btn", data: {toggle: "modal", target: "#cancelConfirmModal"} do %>
+              <%= t ".cancel" %>
+            <% end %>
+            <%= render "shared/modal/cancel_modal", status_canceled: true %>
+            <%= link_to t(".edit"), edit_request_path(request), id: "edit_btn", class: "btn btn-primary mr-2" %>
+          <% end %>
+          <% if current_user.accountant? && request.approved? %>
+            <%= link_to  "#", class: "btn btn-danger mr-2", id: "reject_btn", data: {toggle: "modal", target: "#rejectConfirmModal"} do %>
+              <%= t ".reject" %>
+            <% end %>
+            <%= render "shared/modal/reject_modal", role: :accountant, request: request %>
+            <%= link_to  "#", class: "btn btn-warning mr-2 text-white", id: "paid_btn", data: {toggle: "modal", target: "#paidConfirmModal"} do %>
+              <%= t ".paid" %>
+            <% end %>
+            <%= render "shared/modal/paid_modal", role: :accountant, request: request %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
   <div class="d-none">
+    <small id='paid-label' class='badge badge-warning' style='text-decoration: none;'><%= t ".paid" %></small>
     <small id='reject-label' class='badge badge-danger' style='text-decoration: none;'><%= t ".rejected" %></small>
     <small id='approve-label' class='badge badge-success' style='text-decoration: none;'><%= t ".approved" %></small>
+    <small id='canceled-label' class='badge badge-dark' style='text-decoration: line-through;'><%= t ".canceled" %></small>
   </div>
 </div>
