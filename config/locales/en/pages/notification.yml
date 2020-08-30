@@ -1,0 +1,9 @@
+en:
+  notifications:
+    notification:
+      notify_msg: "Your request has been"
+      notify_for_manager_msg: "You've received a request from"
+      ago: "ago"
+      approved: "approved"
+      rejected: "rejected"
+      paid: "paid"

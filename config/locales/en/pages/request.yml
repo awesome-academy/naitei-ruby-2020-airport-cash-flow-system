@@ -53,6 +53,7 @@ en:
       title: "Title:"
       content: "Content:"
       status: "Status:"
+      reason: "Reason:"
       sum: "Total money:"
       currency: "Currency:"
       details: "Details"

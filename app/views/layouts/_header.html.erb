@@ -11,18 +11,31 @@
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
-      <%= link_to "#", class: "nav-link", data: {toggle: "dropdown"} do %>
+      <%= link_to notifications_path, remote: true, class: "nav-link", data: {toggle: "dropdown", type: "script"} do %>
         <i class="fas fa-bell"></i>
-        <span class="badge badge-warning navbar-badge">15</span>
+        <span class="badge badge-warning navbar-badge <%= Notification.for_user(current_user.id) == 0 ? "d-none" : "" %>" id="unviewed-notification">
+          <%= Notification.for_user current_user.id %>
+        </span>
       <% end %>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <span class="dropdown-item dropdown-header"><%= t ".notify" %></span>
+        <div class="dropdown-item d-flex justify-content-between">
+          <span><%= t ".notify" %></span>
+          <%= link_to mark_all_as_read_path, remote: true, method: :patch, class: "text-decoration-none text-muted text-sm" do %>
+            <%= t ".mark_all_as_read" %>
+          <% end %>
+        </div>
         <div class="dropdown-divider"></div>
-        <%= link_to "#", class: "dropdown-item" do %>
-          <i class="fas fa-envelope"></i>
-        <% end %>
-        <div class="dropdown-divider"></div>
-        <%= link_to t(".see_all"), "#", class: "dropdown-item dropdown-footer" %>
+        <div id="notification-content" class="nottify-scrollbar">
+          <% if current_user.notifications_unviewed.blank? %>
+            <span class="dropdown-item text-center">
+              <%= t ".empty_notification" %>
+            </span>
+          <% else %>
+            <div class="nottify-scrollbar">
+              <%= render_notifications current_user.notifications_unviewed.lastest %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </li>
     <li class="nav-item dropdown mr-3">

@@ -99,3 +99,14 @@ body {
   margin-top: 22px;
   text-transform: capitalize;
 }
+
+.nottify-scrollbar{
+  height: 150px;
+  overflow-y: scroll;
+}
+
+#unviewed-notification{
+  top: 10%;
+  left: 50%;
+  width: 65%;
+}

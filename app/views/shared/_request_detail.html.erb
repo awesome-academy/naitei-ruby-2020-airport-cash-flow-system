@@ -48,6 +48,18 @@
         </small>
       </div>
     </div>
+    <% if request.reason.present? %>
+      <div class="row request-row">
+        <div class="col-3">
+          <div class="font-weight-bold">
+            <%= t ".reason" %>
+          </div>
+        </div>
+        <div class="col-9">
+          <%= request.reason %>
+        </div>
+      </div>
+    <% end %>
     <div class="row request-row">
       <div class="col-3">
         <div class="font-weight-bold">
