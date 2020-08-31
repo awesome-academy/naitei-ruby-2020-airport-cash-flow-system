@@ -52,3 +52,5 @@ status:
     approved: 2
     rejected: 3
     canceled: 4
+user:
+  default_password: "123456"
