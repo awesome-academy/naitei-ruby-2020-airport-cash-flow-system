@@ -102,7 +102,7 @@
                 <%= req.description %>
               </td>
               <td>
-                <%= number_to_currency req.amount %>
+                <%= number_to_currency req.amount, unit: currency_symbol(request.currency) %>
               </td>
             </tr>
           <% end %>

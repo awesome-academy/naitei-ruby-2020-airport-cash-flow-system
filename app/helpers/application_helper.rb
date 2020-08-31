@@ -13,4 +13,14 @@ module ApplicationHelper
       :warning
     end
   end
+
+  def currency_symbol currency
+    if currency == "VND"
+      "₫"
+    elsif currency == "USD"
+      "$"
+    elsif currency == "JPY"
+      "¥"
+    end
+  end
 end
