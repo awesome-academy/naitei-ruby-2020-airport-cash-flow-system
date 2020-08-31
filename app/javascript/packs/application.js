@@ -12,7 +12,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("cocoon")
+require("./constant")
 
 import toastr from 'toastr'
 window.toastr = toastr
 global.$ = jQuery;
+global.I18n = require('i18n-js')

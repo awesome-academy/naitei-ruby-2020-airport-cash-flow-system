@@ -53,6 +53,7 @@ vi:
       title: "Tiêu đề:"
       content: "Nội dung:"
       status: "Trạng thái:"
+      reason: "Lý do:"
       sum: "Tổng tiền:"
       currency: "ĐV tiền tệ:"
       details: "Chi tiết"

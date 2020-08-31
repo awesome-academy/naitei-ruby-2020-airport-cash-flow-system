@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_023218) do
+ActiveRecord::Schema.define(version: 2020_08_28_152659) do
 
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
@@ -42,11 +42,13 @@ ActiveRecord::Schema.define(version: 2020_08_26_023218) do
   end
 
   create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
-    t.bigint "request_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["request_id"], name: "index_notifications_on_request_id"
+    t.boolean "viewed"
+    t.string "item_type"
+    t.bigint "item_id"
+    t.index ["item_type", "item_id"], name: "index_notifications_on_item_type_and_item_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
@@ -106,7 +108,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_023218) do
   add_foreign_key "histories", "requests"
   add_foreign_key "incomes", "suppliers"
   add_foreign_key "incomes", "users"
-  add_foreign_key "notifications", "requests"
   add_foreign_key "notifications", "users"
   add_foreign_key "request_details", "requests"
   add_foreign_key "requests", "users"

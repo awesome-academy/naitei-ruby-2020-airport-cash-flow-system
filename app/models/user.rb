@@ -8,6 +8,8 @@ class User < ApplicationRecord
   belongs_to :section
 
   scope :users_section, ->(ids){select(:id).where("users.section_id = ?", ids)}
+  scope :manager_of_section, ->{where role: :manager}
+  scope :accountant, ->{where role: :accountant}
 
   VALID_EMAIL_REGEX = Settings.validations.user.email_regex
   USERS_PARAMS = %i(name email password password_confirmation role section_id).freeze
@@ -26,6 +28,10 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_secure_password
+
+  def notifications_unviewed
+    Notification.where(user_id: id).unviewed
+  end
 
   def remember
     self.remember_token = User.new_token

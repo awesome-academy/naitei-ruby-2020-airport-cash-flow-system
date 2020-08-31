@@ -1,0 +1,18 @@
+<%= link_to notification_path(notification), remote: true, method: :patch, class: "dropdown-item" do %>
+  <div>
+    <i class="fas fa-envelope"></i>
+    <span class="text-sm">
+      <% if current_user.manager? && notification.item.user_id != current_user.id %>
+        <%= t ".notify_for_manager_msg" %> <%= notification.item.user.name %>
+      <% elsif current_user.accountant? && notification.item.user_id != current_user.id %>
+        <%= t ".notify_for_manager_msg" %> <%= notification.item.user.name %>
+      <% else %>
+        <%= t ".notify_msg" %> <%= t ".#{notification.item.status}" %>
+      <% end %>
+    </span>
+  </div>
+  <div class="text-sm text-muted">
+    <%= time_ago_in_words notification.item.updated_at %> <%= t ".ago" %>
+  </div>
+<% end %>
+<div class="dropdown-divider"></div>

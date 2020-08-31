@@ -54,3 +54,4 @@ status:
     canceled: 4
 user:
   default_password: "123456"
+new_notification: "new_notification"

@@ -1,9 +1,12 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
 
     get "/login", to: "sessions#new", as: "login"
     post "/login", to: "sessions#create"
+    patch "/notifications/mark_all_as_read", to: "markallasread#update", as: "mark_all_as_read"
     delete "/logout", to: "sessions#destroy"
 
     namespace :accountant do
@@ -25,5 +28,10 @@ Rails.application.routes.draw do
     end
 
     resources :requests, except: :destroy
+
+    resources :notifications, only: %i(update index)
+
+    mount ActionCable.server => "/cable"
+    mount Sidekiq::Web => "/sidekiq"
   end
 end

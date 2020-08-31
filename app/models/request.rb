@@ -1,4 +1,6 @@
 class Request < ApplicationRecord
+  include Notificable
+
   enum status: {pending: 1, approved: 2, paid: 3, rejected: 4, canceled: 5}
 
   has_many :request_details, inverse_of: :request, dependent: :destroy
@@ -33,6 +35,14 @@ class Request < ApplicationRecord
   scope :except_cancel_request, ->{where.not status: Settings.status.request.canceled}
   scope :approved_requests, ->{where status: Settings.status.request.approved}
   scope :paid_requests, ->{where status: Settings.status.request.paid}
+
+  def send_to_manager
+    User.users_section(user.section_id).manager_of_section
+  end
+
+  def send_to_accountant
+    User.accountant
+  end
 
   def paid_request! status_change, request
     ActiveRecord::Base.transaction do

@@ -1,0 +1,9 @@
+vi:
+  notifications:
+    notification:
+      notify_msg: "Yêu cầu đã"
+      notify_for_manager_msg: "Bạn nhận được yêu cầu từ"
+      ago: "trước"
+      approved: "được chấp nhận"
+      rejected: "bị từ chối"
+      paid: "được duyệt chi"
