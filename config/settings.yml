@@ -55,3 +55,7 @@ status:
 user:
   default_password: "123456"
 new_notification: "new_notification"
+min_faker_amount: 10000
+max_faker_amount: 90000
+min_faker_status: 1
+max_faker_status: 4
