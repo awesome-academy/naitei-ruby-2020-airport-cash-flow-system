@@ -1,8 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  let!(:section) {FactoryBot.create :section}
-  let(:user) {FactoryBot.create :user, section_id: section.id}
+  let(:user) {FactoryBot.create :user}
   let!(:user_fail) {FactoryBot.build :user, name: nil}
 
   describe "Validations" do

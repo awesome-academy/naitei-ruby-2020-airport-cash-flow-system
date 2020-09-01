@@ -2,12 +2,12 @@ require "rails_helper"
 
 RSpec.describe Income, type: :model do
   let!(:section) {FactoryBot.create :section}
-  let!(:user) {FactoryBot.create :user, section_id: section.id}
+  let!(:user) {FactoryBot.create :user, section_id: section.id, role: User.roles[:accountant]}
   let!(:supplier) {FactoryBot.create :supplier}
 
   describe "Validations" do
     context "when all required fields given" do
-      let(:income) {FactoryBot.create :income, user_id: user.id, supplier_id: section.id}
+      let(:income) {FactoryBot.create :income, user_id: user.id, supplier_id: supplier.id}
 
       it "should be true" do
         expect(income.valid?).to eq true

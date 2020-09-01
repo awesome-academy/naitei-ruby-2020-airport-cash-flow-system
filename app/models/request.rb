@@ -24,7 +24,8 @@ class Request < ApplicationRecord
                     length: {maximum: Settings.validations.request.title_max_length}
   validates :content, presence: true,
                     length: {maximum: Settings.validations.request.content_max_length}
-  validates :status, :currency, :request_details, presence: true
+  validates :currency, :request_details, presence: true
+  validates :status, presence: true, inclusion: {in: statuses.keys}
   validates :reason, presence: true, if: :rejected?
   validates_associated :request_details
 
