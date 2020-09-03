@@ -7,18 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          sudo /etc/init.d/mysql start
+      - name: Start MySql
+        run: sudo /etc/init.d/mysql start
       - name: Install bundle
         run: sudo gem install bundler:1.17.2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: Install bundler
         run: |
+          bundle config path vendor/bundle
           bundle install
       - name: Rubocop
-        run: bundle exec rubocop
+        run: bundle exec rubocop -c .rubocop.yml
       - name: Rails Best Practices
         run: bundle exec rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb"
       - name: Rpec
         run: |
-          DATABASE_USERNAME=root DATABASE_PASSWORD=root rails db:create
-          DATABASE_USERNAME=root DATABASE_PASSWORD=root bundle exec rspec --format documentation
+          DATABASE_USERNAME=root DATABASE_PASSWORD=root DATABASE_NAME_DEVELOPMENT=cfs_development DATABASE_NAME_TEST=cfs_test bundle exec rails db:create
+          DATABASE_USERNAME=root DATABASE_PASSWORD=root DATABASE_NAME_DEVELOPMENT=cfs_development DATABASE_NAME_TEST=cfs_test bundle exec rspec --format documentation

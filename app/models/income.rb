@@ -13,6 +13,7 @@ class Income < ApplicationRecord
   validates :content, presence: true, length: {maximum: Settings.content.max_length}
   validates :currency, :amount, :supplier_id, :status, :user_id, presence: true
   validates :amount, numericality: {greater_than: Settings.validations.amout_min}
+  validates :status, presence: true, inclusion: {in: statuses.keys}
 
   scope :by_status_then_created_at, ->{order status: :asc, created_at: :desc}
 end

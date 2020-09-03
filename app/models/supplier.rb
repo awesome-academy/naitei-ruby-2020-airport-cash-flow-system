@@ -15,7 +15,8 @@ class Supplier < ApplicationRecord
   validates :taxNum, presence: true,
                      format: {with: VALID_TAX_NUMBER_REGEX, message: I18n.t("accountant.suppliers.message_err")},
                      uniqueness: {case_sensitive: false}
-  validates :address, :sup_type, presence: true
+  validates :address, presence: true
+  validates :sup_type, presence: true, inclusion: {in: sup_types.keys}
 
   scope :own_supplier, ->(user_id){where user_id: user_id}
   scope :sort_by_name, ->{order name: :asc}

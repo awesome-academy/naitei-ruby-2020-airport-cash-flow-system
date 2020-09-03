@@ -9,6 +9,9 @@ require "database_cleaner/active_record"
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].each { |f| require f }
 
+include ActionDispatch::TestProcess
+include RSpecSessionHelper
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
