@@ -21,6 +21,9 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle install
+      - name: Setup Redis
+        run: |
+          sudo apt install redis-server
       - name: Rubocop
         run: bundle exec rubocop -c .rubocop.yml
       - name: Rails Best Practices

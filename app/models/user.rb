@@ -10,7 +10,7 @@ class User < ApplicationRecord
   belongs_to :section
 
   scope :users_section, ->(ids){select(:id).where("users.section_id = ?", ids)}
-  scope :manager_of_section, ->{where role: :manager}
+  scope :manager_of_section, ->(section_id){where("users.section_id = ? and users.role = 3", section_id)}
   scope :accountant, ->{where role: :accountant}
 
   VALID_EMAIL_REGEX = Settings.validations.user.email_regex

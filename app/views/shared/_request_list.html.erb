@@ -12,55 +12,63 @@
       <%= t ".head" %>
     </h2>
   </div>
-  <table class="table table-striped table-hover table-bordered padding-margin-0">
-      <thead>
-        <tr>
-          <th scope="col"><%= t ".id" %></th>
-          <th scope="col"><%= t ".requestor" %></th>
-          <th scope="col"><%= t ".title" %></th>
-          <th scope="col"><%= t ".created_at" %></th>
-          <th scope="col"><%= t ".amount" %></th>
-          <th scope="col"><%= t ".status" %></th>
-          <th scope="col"><%= t ".actions" %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% requests.each_with_index do |request, index| %>
-        <tr>
-          <td><%= index + 1 + (page-1)*Settings.pagination.items_per_pages %></td>
-          <td><%= request.user_name %></td>
-          <td><%= request.title %></td>
-          <td><%= I18n.localize request.created_at, format: t("app.dates.format") %></td>
-          <td> <%=number_to_currency sum_amount(request).values[0], unit: currency_symbol(request.currency)%></td>
-          <td>
-            <small class="badge badge-<%= modify_label_color request.status.parameterize.underscore.to_sym %>"
-              style="text-decoration: <%= request.status=="canceled"? "line-through" : "none" %>;">
-              <%= t ".#{request.status}" %>
-            </small>
-          </td>
-          <td>
-            <% if section_requests %>
-              <%= link_to manager_request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
+  <%= render "shared/request_search_form", search_request: search_request, path: path%>
+  <% if requests.present? %>
+     <table class="table table-striped table-hover table-bordered padding-margin-0">
+        <thead>
+          <tr>
+            <th class="text-center" scope="col"><%= t ".requestor" %></th>
+            <th class="text-center" scope="col"><%= t ".title" %></th>
+            <th class="text-center" scope="col"><%= t ".created_at" %></th>
+            <th class="text-center" scope="col"><%= t ".amount" %></th>
+            <th class="text-center" scope="col"><%= t ".status" %></th>
+            <th class="text-center" scope="col"><%= t ".actions" %></th>
+            <th class="text-center" scope="col"><%= t ".history" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% requests.each_with_index do |request, index| %>
+          <tr>
+            <td><%= request.user_name %></td>
+            <td><%= request.title %></td>
+            <td><%= I18n.localize request.created_at, format: t("app.dates.format") %></td>
+            <td> <%=number_to_currency sum_amount(request).values[0], unit: currency_symbol(request.currency)%></td>
+            <td>
+              <small class="badge badge-<%= modify_label_color request.status.parameterize.underscore.to_sym %>"
+                style="text-decoration: <%= request.status=="canceled"? "line-through" : "none" %>;">
+                <%= t ".#{request.status}" %>
+              </small>
+            </td>
+            <td>
+              <% if section_requests %>
+                <%= link_to manager_request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
+                  <i class="fa fa-eye"></i>
+                <% end %>
+              <% elsif accountant_requests %>
+                <%= link_to accountant_request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
+                  <i class="fa fa-eye"></i>
+                <% end %>
+              <% else %>
+                <%= link_to edit_request_path(request), class: "btn btn-danger btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".edit") do %>
+                  <i class="fa fa-edit"></i>
+                <% end %>
+                <%= link_to request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
+                  <i class="fa fa-eye"></i>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to "#", class: "btn btn-primary btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
                 <i class="fa fa-eye"></i>
               <% end %>
-            <% elsif accountant_requests %>
-              <%= link_to accountant_request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
-                <i class="fa fa-eye"></i>
-              <% end %>
-            <% else %>
-              <%= link_to edit_request_path(request), class: "btn btn-danger btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".edit") do %>
-                <i class="fa fa-edit"></i>
-              <% end %>
-              <%= link_to request_path(request), class: "btn btn-info btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
-                <i class="fa fa-eye"></i>
-              <% end %>
-            <% end %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-  </table>
-  </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+    </table>
+  <% else %>
+    <div class="text-center empty-results"><%= t ".no_results" %></div>
+  <% end %>
   <div class="card-footer clearfix">
     <ul class="pagination pagination-sm m-0 float-right">
       <%= paginate requests, theme: "twitter-bootstrap-4" %>

@@ -10,8 +10,10 @@ consumer.subscriptions.create("NotificationChannel", {
 
   received(data) {
     if(data.action == NEW_NOTIFICATION){
-      $("#unviewed-notification").removeClass("d-none")
-      $("#unviewed-notification").html(data.count)
+      if(data.count !== 0 ) {
+        $("#unviewed-notification").removeClass("d-none")
+        $("#unviewed-notification").html(data.count)
+      }
       toastr.info(I18n.t("notification_msg"))
     }
   }

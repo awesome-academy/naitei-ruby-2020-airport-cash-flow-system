@@ -102,11 +102,27 @@ body {
 
 .nottify-scrollbar{
   height: 150px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #unviewed-notification{
   top: 10%;
   left: 50%;
   width: 65%;
+}
+
+#update_notify{
+  cursor: pointer;
+}
+
+.unread-noti{
+  color: $unread-notify-color;
+}
+
+.text-notify{
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.3rem;
+  text-overflow: ellipsis;
 }

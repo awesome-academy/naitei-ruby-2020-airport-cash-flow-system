@@ -10,5 +10,4 @@ en:
       sign_in: "Sign in"
       notify: "Notifications"
       see_all: "See all"
-      mark_all_as_read: "Mark all as read"
       empty_notification: "You don't have any notifications"

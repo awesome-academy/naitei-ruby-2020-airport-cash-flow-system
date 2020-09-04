@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
     devise_for :users
 
-    patch "/notifications/mark_all_as_read", to: "markallasread#update", as: "mark_all_as_read"
-
     namespace :accountant do
       resources :incomes, only: %i(index new create)
       resources :suppliers, except: %i(show destroy)

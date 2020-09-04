@@ -2,13 +2,11 @@ class Request < ApplicationRecord
   include Notificable
 
   enum status: {pending: 1, approved: 2, paid: 3, rejected: 4, canceled: 5}
-
   has_many :request_details, inverse_of: :request, dependent: :destroy
   has_many :histories, dependent: :destroy
   belongs_to :user
 
   delegate :name, to: :user, prefix: true, allow_nil: true
-  delegate :name, to: :status, prefix: true, allow_nil: true
 
   accepts_nested_attributes_for :request_details, allow_destroy: true
 
@@ -37,8 +35,18 @@ class Request < ApplicationRecord
   scope :approved_requests, ->{where status: Settings.status.request.approved}
   scope :paid_requests, ->{where status: Settings.status.request.paid}
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(`requests`.`created_at`)")
+  end
+
+  ransacker :sum_amount do
+    # rubocop:disable Layout/LineLength
+    Arel.sql("(SELECT SUM(`request_details`.`amount`) FROM `request_details` WHERE `request_details`.`request_id` = `requests`.`id`)")
+    # rubocop:enable Layout/LineLength
+  end
+
   def send_to_manager
-    User.users_section(user.section_id).manager_of_section
+    User.manager_of_section user.section_id
   end
 
   def send_to_accountant

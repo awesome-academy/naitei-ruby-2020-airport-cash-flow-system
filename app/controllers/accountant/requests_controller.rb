@@ -1,8 +1,11 @@
 class Accountant::RequestsController < Accountant::ApplicationController
   include RequestAction
 
+  before_action :search, only: :index
+
   def index
-    @requests = request_for_accountant.page(params[:page]).per Settings.pagination.items_per_pages
+    @requests = @search_accountant_request.result.distinct.page(params[:page]).per Settings.pagination.items_per_pages
+    @accountant_request_search_path = accountant_requests_path
     @page = params[:page].nil? ? Settings.pagination.default_page : params[:page].to_i
   end
 
@@ -44,5 +47,9 @@ class Accountant::RequestsController < Accountant::ApplicationController
 
   def paid_request status_change
     @request.paid_request! status_change, @request
+  end
+
+  def search
+    @search_accountant_request = request_for_accountant.ransack params[:q]
   end
 end

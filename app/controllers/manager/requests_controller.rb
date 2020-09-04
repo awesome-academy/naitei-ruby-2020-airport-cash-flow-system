@@ -1,8 +1,11 @@
 class Manager::RequestsController < Manager::ApplicationController
   include RequestAction
 
+  before_action :search, only: :index
+
   def index
-    @requests = section_request.by_status_and_datetime.page(params[:page]).per Settings.pagination.items_per_pages
+    @section_request_search_path = manager_requests_path
+    @requests = request_list.page(params[:page]).per Settings.pagination.items_per_pages
     @page = params[:page].nil? ? Settings.pagination.default_page : params[:page].to_i
   end
 
@@ -22,6 +25,14 @@ class Manager::RequestsController < Manager::ApplicationController
   end
 
   private
+
+  def search
+    @search_section_request = section_request.ransack params[:q]
+  end
+
+  def request_list
+    @request_list = @search_section_request.result.distinct.by_status_and_datetime
+  end
 
   def section_request
     Request.find_requests_by_section(current_user.section_id).except_own_request(current_user.id).except_cancel_request
