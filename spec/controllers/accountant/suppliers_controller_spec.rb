@@ -75,7 +75,7 @@ RSpec.describe Accountant::SuppliersController, type: :controller do
       it "should render view edit" do
         @accountant_test = FactoryBot.create :user, role: User.roles[:accountant]
         @supplier_to_update = FactoryBot.create :supplier, user_id: @accountant_test.id
-        log_in @accountant_test
+        sign_in @accountant_test
         get :edit, params: {id: @supplier_to_update.id}
         expect(response).to render_template :edit
       end
@@ -86,7 +86,7 @@ RSpec.describe Accountant::SuppliersController, type: :controller do
     before :each do
       @accountant_test = FactoryBot.create :user, role: User.roles[:accountant]
       @supplier_to_update = FactoryBot.create :supplier, user_id: @accountant_test.id
-      log_in @accountant_test
+      sign_in @accountant_test
     end
 
     context "with valid attributes" do

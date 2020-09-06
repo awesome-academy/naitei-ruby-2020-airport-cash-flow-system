@@ -80,7 +80,7 @@ users = User.order(:created_at).take(10)
 2.times do
   title = Faker::Lorem.sentence(word_count: 2)
   content = Faker::Lorem.sentence(word_count: 20)
-  currency = Faker::Currency.code
+  currency = "USD"
   status = 1
   users.each { |user| user.requests.create!(
       title: title,
@@ -106,15 +106,6 @@ end
   address = Faker::Address.city
   sup_type = true
   user_id = 5
-  Supplier.create!(name: name, taxNum: taxNumber, address: address, sup_type: sup_type, user_id: user_id)
-end
-# TYPE: false =>company
-10.times do |n|
-  name = Faker::Name.name
-  taxNumber = Faker::Number.number(digits: 10)
-  address = Faker::Address.city
-  sup_type = false
-  user_id = 2
   Supplier.create!(name: name, taxNum: taxNumber, address: address, sup_type: sup_type, user_id: user_id)
 end
 

@@ -1,6 +1,4 @@
 class Accountant::ApplicationController < ApplicationController
-  include SessionsHelper
-
   before_action :require_accountant
 
   def home; end

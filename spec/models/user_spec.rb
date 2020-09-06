@@ -43,10 +43,4 @@ RSpec.describe User, type: :model do
       end
     end
   end
-
-  describe ".new_token" do
-    it "new token should be successfully generated" do
-      expect(User.new_token.size > 0).to eq(true)
-    end
-  end
 end

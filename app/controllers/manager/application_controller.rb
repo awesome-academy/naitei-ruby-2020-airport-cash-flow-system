@@ -1,6 +1,4 @@
 class Manager::ApplicationController < ApplicationController
-  include SessionsHelper
-
   before_action :require_manager
 
   def home; end

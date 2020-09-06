@@ -8,7 +8,7 @@
 
   <body class="hold-transition sidebar-mini layout-fixed">
     <%= render "shared/flash_toaster" %>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <%= render "layouts/header" %>
       <%= render "layouts/side_bar" %>
       <div class="content-wrapper">
