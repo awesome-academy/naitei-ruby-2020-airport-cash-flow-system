@@ -34,5 +34,6 @@ Rails.application.routes.draw do
 
     mount ActionCable.server => "/cable"
     mount Sidekiq::Web => "/sidekiq"
+    mount Api => "/"
   end
 end

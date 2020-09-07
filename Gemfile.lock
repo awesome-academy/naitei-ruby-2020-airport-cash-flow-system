@@ -152,6 +152,18 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    grape (1.4.0)
+      activesupport
+      builder
+      dry-types (>= 1.1)
+      mustermann-grape (~> 1.0.0)
+      rack (>= 1.3.0)
+      rack-accept
+    grape-entity (0.8.1)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.3.2)
+    grape_on_rails_routes (0.3.2)
+      rails (>= 3.1.1)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -194,8 +206,11 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     msgpack (1.3.3)
+    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    mustermann-grape (1.0.1)
+      mustermann (>= 1.0.0)
     mysql2 (0.5.3)
     nested_form (0.3.2)
     nio4r (2.5.2)
@@ -216,6 +231,10 @@ GEM
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-pjax (1.1.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -406,12 +425,16 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker (= 2.1.2)
+  grape
+  grape-entity
+  grape_on_rails_routes
   i18n-js
   kaminari
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
   pry-rails
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-controller-testing
   rails-i18n

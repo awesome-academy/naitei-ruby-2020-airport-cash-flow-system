@@ -34,6 +34,12 @@ Style/ClassAndModuleChildren:
   Description: "Checks style of children classes and modules."
   Enabled: false
 
+Metrics/BlockLength:
+  Description: "Block has too many lines."
+  Enabled: false
+  Include:
+    - "api/**/*"
+
 Metrics/ClassLength:
   Description: "Avoid classes longer than 100 lines of code."
   Enabled: false
