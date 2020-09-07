@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
 
-    get "/login", to: "sessions#new", as: "login"
-    post "/login", to: "sessions#create"
+    devise_for :users
+
     patch "/notifications/mark_all_as_read", to: "markallasread#update", as: "mark_all_as_read"
-    delete "/logout", to: "sessions#destroy"
 
     namespace :accountant do
       resources :incomes, only: %i(index new create)

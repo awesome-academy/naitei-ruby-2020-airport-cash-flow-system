@@ -1,14 +1,15 @@
 vi:
-  sessions:
-    new:
-      title_page: "Đăng nhập"
-      email_label: "Email"
-      password_label: "Mật khẩu"
-      checkbox_msg: "Duy trì đăng nhập"
-      btn_label: "Đăng nhập"
-      btn_login_aws: "Đăng nhập với AWS"
-      sign_in: "Đăng nhập"
-      already_sign_in: "Bạn đã đăng nhập"
-    create:
-      failed_msg: "Đăng nhập không thành công"
-      success_msg: "Đăng nhập thành công"
+  devise:
+    sessions:
+      new:
+        title_page: "Đăng nhập"
+        email_label: "Email"
+        password_label: "Mật khẩu"
+        checkbox_msg: "Duy trì đăng nhập"
+        btn_label: "Đăng nhập"
+        btn_login_aws: "Đăng nhập với AWS"
+        sign_in: "Đăng nhập"
+        already_sign_in: "Bạn đã đăng nhập"
+      create:
+        failed_msg: "Đăng nhập không thành công"
+        success_msg: "Đăng nhập thành công"

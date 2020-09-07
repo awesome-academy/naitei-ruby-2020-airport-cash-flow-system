@@ -7,6 +7,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap4-kaminari-views"
 gem "cocoon"
 gem "config"
+gem "devise"
 gem "faker", "2.1.2"
 gem "i18n-js"
 gem "kaminari"

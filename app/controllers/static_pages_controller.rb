@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :require_login, except: :home
+  before_action :authenticate_user!, except: :home
 
   def home; end
 end
