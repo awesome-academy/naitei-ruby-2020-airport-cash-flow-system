@@ -8,10 +8,10 @@ module Notificable
   end
 
   def send_notifications_to_users
-    NotificationSenderJob.perform_later self
+    NotificationSenderJob.perform_now self
   end
 
   def send_notifications_to_manager
-    NotificationReceiverJob.perform_later(self) if respond_to? :send_to_manager
+    NotificationReceiverJob.perform_now(self) if respond_to? :send_to_manager
   end
 end

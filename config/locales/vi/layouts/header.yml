@@ -10,5 +10,4 @@ vi:
       sign_in: "Đăng nhập"
       notify: "Thông báo"
       see_all: "Xem tất cả thông báo"
-      mark_all_as_read: "Đánh dấu tất cả đã đọc"
       empty_notification: "Bạn không có thông báo nào"

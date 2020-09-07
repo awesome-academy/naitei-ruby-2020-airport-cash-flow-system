@@ -2,11 +2,8 @@ class NotificationsController < ApplicationController
   before_action :get_notification_by_id, only: :update
 
   def index
-    @notifications = Notification.notification_user(current_user.id).unviewed.lastest
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @notifications = Notification.notification_user(current_user.id).lastest
+    render json: {html: render_to_string(partial: "notifications", locals: {notifications: @notifications})}
   end
 
   def update

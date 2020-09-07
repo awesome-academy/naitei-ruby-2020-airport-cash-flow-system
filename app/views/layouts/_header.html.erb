@@ -11,30 +11,19 @@
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
-      <%= link_to notifications_path, remote: true, class: "nav-link", data: {toggle: "dropdown", type: "script"} do %>
+      <div class="nav-link" data-toggle="dropdown" id="update_notify">
         <i class="fas fa-bell"></i>
-        <span class="badge badge-warning navbar-badge <%= Notification.for_user(current_user.id) == 0 ? "d-none" : "" %>" id="unviewed-notification">
-          <%= Notification.for_user current_user.id %>
+        <span class="badge badge-warning navbar-badge <%= current_user.notifications_unviewed.size == 0 ? "d-none" : "" %>" id="unviewed-notification">
+          <%= current_user.notifications_unviewed.size %>
         </span>
-      <% end %>
+      </div>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <div class="dropdown-item d-flex justify-content-between">
+        <div class="dropdown-item d-flex justify-content-center">
           <span><%= t ".notify" %></span>
-          <%= link_to mark_all_as_read_path, remote: true, method: :patch, class: "text-decoration-none text-muted text-sm" do %>
-            <%= t ".mark_all_as_read" %>
-          <% end %>
         </div>
         <div class="dropdown-divider"></div>
         <div id="notification-content" class="nottify-scrollbar">
-          <% if current_user.notifications_unviewed.blank? %>
-            <span class="dropdown-item text-center">
-              <%= t ".empty_notification" %>
-            </span>
-          <% else %>
-            <div class="nottify-scrollbar">
-              <%= render_notifications current_user.notifications_unviewed.lastest %>
-            </div>
-          <% end %>
+          <%= render_notifications Notification.notification_user(current_user.id).lastest %>
         </div>
       </div>
     </li>
@@ -70,4 +59,7 @@
       <div>
     </li>
   </ul>
+  <div class="d-none" id="notification_url">
+    <%= notifications_path %>
+  </div>
 </nav>

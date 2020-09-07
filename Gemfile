@@ -5,6 +5,7 @@ gem "active_link_to"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap4-kaminari-views"
+gem "bootstrap-datepicker-rails"
 gem "cocoon"
 gem "config"
 gem "devise"

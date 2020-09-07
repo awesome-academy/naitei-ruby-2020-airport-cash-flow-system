@@ -1,7 +1,7 @@
 en:
   app:
     dates:
-      format: "%H:%M %Y/%m/%d"
+      format: "%m/%d/%Y"
   manager:
     requests:
       request_not_found: "You don't have permission to see this request"

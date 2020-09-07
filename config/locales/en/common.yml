@@ -1,0 +1,23 @@
+en:
+  prompt:
+    any_status: "Any status"
+    any_section: "Any section"
+  placeholder:
+    title_cont_des: "Title, content, description"
+    minimum_money_amount: "Minimum money amount"
+    maximum_money_amount: "Maximum money amount"
+    requestor: "Requestor"
+  status:
+    pending: "Pending"
+    approved: "Approved"
+    paid: "Paid"
+    rejected: "Rejected"
+    canceled: "Canceled"
+  search_form:
+    search: "Search"
+    clear: "Clear"
+  tooltip:
+    section: "Search by section"
+    status: "Search by status"
+    title_cont_des: "Search by title, content, description"
+    requestor: "Search by requestor"

@@ -1,0 +1,23 @@
+vi:
+  prompt:
+    any_status: "Tất cả trạng thái"
+    any_section: "Tất cả bộ phận"
+  placeholder:
+    title_cont_des: "Nhãn, nội dung, miêu tả"
+    minimum_money_amount: "Số tiền nhỏ nhất"
+    maximum_money_amount: "Số tiền lớn nhất"
+    requestor: "Người yêu cầu"
+  status:
+    pending: "đang chờ"
+    approved: "chấp nhận"
+    paid: "đã chi"
+    rejected: "từ chối"
+    canceled: "hủy bỏ"
+  search_form:
+    search: "Tìm kiếm"
+    clear: "Xóa"
+  tooltip:
+    section: "Tìm kiếm theo bộ phân"
+    status: "Tìm kiếm theo trạng thái"
+    title_cont_des: "Tìm kiếm theo nhãn, nội dung, miêu tả"
+    requestor: "Tìm kiếm theo người yêu cầu"

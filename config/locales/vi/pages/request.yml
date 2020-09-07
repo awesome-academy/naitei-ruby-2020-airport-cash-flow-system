@@ -1,7 +1,7 @@
 vi:
   app:
     dates:
-      format: "%H:%M %d/%m/%Y"
+      format: "%m/%d/%Y"
   manager:
     requests:
       request_not_found: "Bạn không thể xem yêu cầu này"

@@ -2,9 +2,11 @@ class RequestsController < ApplicationController
   include RequestAction
 
   before_action :able_to_edit, only: %i(update edit)
+  before_action :search, only: :index
 
   def index
-    @requests = get_own_request.page(params[:page]).per Settings.pagination.items_per_pages
+    @request_search_path = requests_path
+    @requests = @search_request.result.distinct.page(params[:page]).per Settings.pagination.items_per_pages
     @page = params[:page].nil? ? Settings.pagination.default_page : params[:page].to_i
   end
 
@@ -38,6 +40,10 @@ class RequestsController < ApplicationController
   end
 
   private
+
+  def search
+    @search_request = get_own_request.ransack params[:q]
+  end
 
   def request_params
     params.require(:request).permit Request::REQUEST_PARAMS
