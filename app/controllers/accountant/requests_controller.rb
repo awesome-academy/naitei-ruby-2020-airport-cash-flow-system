@@ -13,10 +13,11 @@ class Accountant::RequestsController < Accountant::ApplicationController
 
   def update
     status = params[:request][:status]
+    approver = params[:request][:approver]
     reason = params[:request][:reason]
     reject_request status, reason if status == status_rejected
 
-    paid_request status if status == status_paid
+    paid_request status, approver if status == status_paid
 
     respond_to do |format|
       format.html{redirect_to manager_request_url}
@@ -45,8 +46,8 @@ class Accountant::RequestsController < Accountant::ApplicationController
     redirect_to root_url
   end
 
-  def paid_request status_change
-    @request.paid_request! status_change, @request
+  def paid_request status_change, approver
+    @request.paid_request! status_change, @request, approver
   end
 
   def search

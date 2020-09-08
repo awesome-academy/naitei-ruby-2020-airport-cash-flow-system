@@ -25,6 +25,12 @@ en:
         confirm_paid: "Are you sure to pay for this request ?"
         close_btn: "Close"
         paid: "Paid"
+      history_modal:
+        history: "History"
+        approver: "Approver"
+        requestor: "Requestor"
+        paid_time: "Approved time point"
+        close_btn: "Close"
     error_messages:
       error: "error"
     request_list:
@@ -46,6 +52,7 @@ en:
       canceled: canceled
       paid: paid
       new_request: New Request
+      history: History
     request_detail:
       failed_login: "You must be logged in to access this section"
       request_detail: "Advance Request"

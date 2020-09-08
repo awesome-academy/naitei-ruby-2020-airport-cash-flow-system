@@ -58,8 +58,12 @@
               <% end %>
             </td>
             <td>
-              <%= link_to "#", class: "btn btn-primary btn-sm", data: {toggle: "tooltip", placement: "top"}, title: t(".detail") do %>
-                <i class="fa fa-eye"></i>
+              <% if request.paid? %>
+                <%= link_to "#", class: "btn btn-primary btn-sm", data: {toggle: "modal", target: "#historyModal#{request.id}"}, title: t(".detail") do %>
+                  <i class="fa fa-eye"></i>
+                <% end %>
+                <%= render "shared/modal/history_modal", history: request.history, request: request %>
+              <% else %>
               <% end %>
             </td>
           </tr>
