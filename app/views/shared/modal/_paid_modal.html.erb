@@ -10,6 +10,7 @@
         </div>
         <div class="modal-body">
           <%= hidden_field_tag "request[status]", Request.statuses.key(Settings.status.request.paid) %>
+          <%= hidden_field_tag "request[approver]", current_user.name %>
           <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>
           <%= f.submit t(".paid"), class: "btn btn-warning float-right col-3 text-white" %>
         </div>
