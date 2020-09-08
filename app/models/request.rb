@@ -3,7 +3,7 @@ class Request < ApplicationRecord
 
   enum status: {pending: 1, approved: 2, paid: 3, rejected: 4, canceled: 5}
   has_many :request_details, inverse_of: :request, dependent: :destroy
-  has_many :histories, dependent: :destroy
+  has_one :history, dependent: :destroy
   belongs_to :user
 
   delegate :name, to: :user, prefix: true, allow_nil: true
@@ -53,11 +53,12 @@ class Request < ApplicationRecord
     User.accountant
   end
 
-  def paid_request! status_change, request
+  def paid_request! status_change, request, approver
     ActiveRecord::Base.transaction do
       request.update! status: status_change
 
       History.create!(
+        approver: approver,
         request_id: request.id,
         paid_time: Time.now.utc
       )

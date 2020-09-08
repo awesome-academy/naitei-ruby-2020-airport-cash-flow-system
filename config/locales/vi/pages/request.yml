@@ -25,6 +25,12 @@ vi:
         confirm_paid: "Bạn có chắc chắn duyệt chi yêu cầu này ?"
         close_btn: "Đóng"
         paid: "Duyệt"
+      history_modal:
+        history: "Lịch sử duyệt"
+        approver: "Người chấp thuận"
+        requestor: "Người tạo yêu cầu"
+        paid_time: "Thời điểm duyệt"
+        close_btn: "Đóng"    
     error_messages:
       error: "lỗi"
     request_list:
@@ -46,6 +52,7 @@ vi:
       canceled: hủy bỏ
       paid: đã chi
       new_request: Tạo yêu cầu
+      history: Lịch sử duyệt
     request_detail:
       failed_login: "Cần đăng nhập để thực hiện hành động này"
       request_detail: "Chi tiết yêu cầu"

@@ -1,0 +1,47 @@
+<div class="modal fade" id="historyModal<%= request.id %>" tabindex="-1" role="dialog" aria-labelledby="historyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="historyModalLabel"><%= t ".history" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row request-row">
+            <div class="col-3">
+              <div class="font-weight-bold">
+                <%= t ".requestor" %>
+              </div>
+            </div>
+            <div class="col-9">
+             <%= request.user_name %>
+            </div>
+          </div>
+          <div class="row request-row">
+            <div class="col-3">
+              <div class="font-weight-bold">
+                <%= t ".approver" %>
+              </div>
+            </div>
+            <div class="col-9">
+              <%= history.approver %>
+            </div>
+          </div>
+          <div class="row request-row">
+            <div class="col-3">
+              <div class="font-weight-bold">
+                <%= t ".paid_time" %>
+              </div>
+            </div>
+            <div class="col-9">
+              <%= history.paid_time %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-secondary col-3" data-dismiss="modal"><%= t ".close_btn" %></button>
+        </div>
+      </div>
+  </div>
+</div>
