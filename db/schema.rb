@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_06_052730) do
+ActiveRecord::Schema.define(version: 2020_09_08_013605) do
 
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_052730) do
     t.bigint "request_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "approver"
     t.index ["request_id"], name: "index_histories_on_request_id"
   end
 

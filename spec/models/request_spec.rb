@@ -37,8 +37,8 @@ RSpec.describe Request, type: :model do
       is_expected.to belong_to :user
     end
 
-    it "should have many histories" do
-      is_expected.to have_many(:histories).dependent :destroy
+    it "should have one history" do
+      is_expected.to have_one(:history).dependent :destroy
     end
 
     it "should have many request_detail" do
