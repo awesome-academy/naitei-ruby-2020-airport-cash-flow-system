@@ -20,7 +20,7 @@ vi:
       cancel_modal:
         confirm_cancel: "Bạn có chắc chắn hủy bỏ yêu cầu này ?"
         close_btn: "Đóng"
-        cancel: "Hủy bỏ"
+        confirm: "Xác nhận"
       paid_modal:
         confirm_paid: "Bạn có chắc chắn duyệt chi yêu cầu này ?"
         close_btn: "Đóng"

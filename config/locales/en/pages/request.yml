@@ -20,7 +20,7 @@ en:
       cancel_modal:
         confirm_cancel: "Are you sure to cancel this request ?"
         close_btn: "Close"
-        cancel: "Cancel"
+        confirm: "Confirm"
       paid_modal:
         confirm_paid: "Are you sure to pay for this request ?"
         close_btn: "Close"
