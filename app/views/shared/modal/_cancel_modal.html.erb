@@ -9,8 +9,8 @@
       </div>
       <div class="modal-body">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close_btn" %></button>
-        <%= link_to request_path(status_canceled: status_canceled), remote: true, method: :patch, class: "btn btn-secondary mr-2 float-right" do %>
-          <%= t ".cancel" %>
+        <%= link_to request_path(status_canceled: status_canceled), remote: true, method: :patch, class: "btn btn-primary mr-2 float-right" do %>
+          <%= t ".confirm" %>
         <% end %>
       </div>
     </div>
